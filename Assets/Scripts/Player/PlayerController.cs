@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S)) 
         {
-            transform.Translate(-Vector3.forward * velocidadMovimiento * Time.deltaTime);
+            transform.Translate(-Vector3.forward * (velocidadMovimiento/2) * Time.deltaTime);
         }
 
         // Rotación a la izquierda y derecha
