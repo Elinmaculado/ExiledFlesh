@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     public float detectionRange;
     public float hitCooldown = 2f;
     public int damage = 1;
+    public float pushForce;
 
     private GameObject player;
     private Transform playerPosition;
@@ -43,7 +44,6 @@ public class EnemyBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hubo una colision");
         if (collision.gameObject.CompareTag("Player"))
         {
             isWaiting = true;
@@ -51,6 +51,10 @@ public class EnemyBehavior : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
+
+                // Empujar al jugador
+                Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
+                playerHealth.PushBack(pushDirection, pushForce);
                 StartCoroutine(WaitAfterHit());
             }
         }
@@ -58,8 +62,7 @@ public class EnemyBehavior : MonoBehaviour
 
     IEnumerator WaitAfterHit()
     {
-        // isWaiting = true;
-        yield return new WaitForSeconds(hitCooldown); 
+        yield return new WaitForSeconds(hitCooldown);
         isWaiting = false;
     }
 }

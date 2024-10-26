@@ -5,30 +5,48 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 2;
+    public float blockCooldown;
     private int currentHealth;
+    private Rigidbody rb;
+    private bool canBlock = true;
 
     void Start()
     {
         currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody>();
     }
 
     public void TakeDamage(int damage)
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && canBlock)
         {
             Debug.Log("Jugador bloqueó el daño.");
-            // El jugador no recibe daño, pero el enemigo aún espera unos segundos
+            canBlock = false;
+            Invoke("ActivateBlock", blockCooldown);
         }
         else
         {
-        currentHealth -= damage;
-        Debug.Log("Player health: " + currentHealth);
+            currentHealth -= damage;
+            Debug.Log("Player health: " + currentHealth);
         }
 
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    public void PushBack(Vector3 direction, float force)
+    {
+        if (rb != null)
+        {
+            rb.AddForce(direction * force, ForceMode.Impulse);
+        }
+    }
+
+    void ActivateBlock()
+    {
+        canBlock = true;
     }
 
     void Die()

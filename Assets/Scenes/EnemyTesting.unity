@@ -207,8 +207,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208293042}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.0063807582, y: 0.9324307, z: -0.36091524, w: -0.016507}
+  m_LocalPosition: {x: -0.030808458, y: 13.177548, z: 14.636093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -523,6 +523,7 @@ MonoBehaviour:
   detectionRange: 5
   hitCooldown: 2
   damage: 1
+  pushForce: 5
 --- !u!54 &1171934668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -727,6 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  blockCooldown: 10
 --- !u!1 &1932994991
 GameObject:
   m_ObjectHideFlags: 0
