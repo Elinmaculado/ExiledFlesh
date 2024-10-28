@@ -25,7 +25,7 @@ public class SlidingPuzzle : MonoBehaviour
 
     private void CreateGamePieces(){
         float widht = 1/(float)gridSize;
-        float pieceGap = widht/10;
+        float pieceGap = 0.01f;
         for(int row=0; row<gridSize; row++){
             for(int col = 0; col<gridSize; col++){
                 Transform piece = Instantiate(piecePrefab, gameTransform);
@@ -36,7 +36,7 @@ public class SlidingPuzzle : MonoBehaviour
                 piece.localScale = (widht-pieceGap)*Vector3.one;
                 piece.name = $"{(row * gridSize)+col}";
 
-                if(row == (int)(gridSize/2) && col == (int)(gridSize/2)){
+                if(row == (gridSize - 1) && col == (gridSize - 1)){
                     emptyLocation = (row*gridSize)+ col;
                     Debug.Log(emptyLocation);
                     piece.gameObject.SetActive(false);
