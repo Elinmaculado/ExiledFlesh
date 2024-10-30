@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine; // Asegúrate de importar Cinemachine al principio
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     private Rigidbody rb;
     private bool canBlock = true;
+
+    // Referencia al componente CinemachineImpulseSource
+    [SerializeField] private CinemachineImpulseSource impulseSource;
 
     void Start()
     {
@@ -28,6 +32,9 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth -= damage;
             Debug.Log("Player health: " + currentHealth);
+
+            // Genera el impulso para sacudir la cámara
+            impulseSource.GenerateImpulse();
         }
 
         if (currentHealth <= 0)

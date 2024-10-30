@@ -21,7 +21,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            Debug.Log("More than one audio manager");
         }
         LoadVolume();
     }
