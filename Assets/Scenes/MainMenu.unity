@@ -1059,6 +1059,8 @@ GameObject:
   - component: {fileID: 573477582}
   - component: {fileID: 573477581}
   - component: {fileID: 573477585}
+  - component: {fileID: 573477587}
+  - component: {fileID: 573477586}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1163,6 +1165,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: CameraShakeTesting
+--- !u!114 &573477586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573477580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ffb01c08a569549af39e536e67a7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 0dd804f33137dad44abac58fe81bf0bb, type: 2}
+  musicSlider: {fileID: 262414628}
+  sfxSlider: {fileID: 2024180403}
+  masterSlider: {fileID: 246507531}
+--- !u!114 &573477587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573477580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10abb0a15a082e942b68d43d10dbdfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 0dd804f33137dad44abac58fe81bf0bb, type: 2}
 --- !u!1 &643401761
 GameObject:
   m_ObjectHideFlags: 0
