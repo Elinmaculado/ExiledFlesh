@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine; // Asegúrate de importar Cinemachine al principio
+using Cinemachine; // Asegï¿½rate de importar Cinemachine al principio
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && canBlock)
         {
-            Debug.Log("Jugador bloqueó el daño.");
+            Debug.Log("Jugador bloqueï¿½ el daï¿½o.");
             canBlock = false;
             Invoke("ActivateBlock", blockCooldown);
         }
@@ -33,8 +33,8 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= damage;
             Debug.Log("Player health: " + currentHealth);
 
-            // Genera el impulso para sacudir la cámara
-            impulseSource.GenerateImpulse();
+            // Genera el impulso para sacudir la cï¿½mara
+            if(impulseSource != null){impulseSource.GenerateImpulse();}
         }
 
         if (currentHealth <= 0)
