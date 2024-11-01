@@ -50,6 +50,7 @@ public class EnemyController : MonoBehaviour
                 Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
                 playerHealth.PushBack(pushDirection, pushForce);
                 StartCoroutine(WaitAfterHit());
+                stateMachine.ChangeState(waitState);
             }
         }
     }

@@ -8,7 +8,6 @@ public class EnemyWaitState : EnemyState
     public override void Enter()
     {
         base.Enter();
-        controller.StartCoroutine(controller.WaitAfterHit());
     }
 
     public override void Exit()
