@@ -16,7 +16,7 @@ public class Interactor : MonoBehaviour{
             Debug.DrawRay(interactorStart.position, interactorStart.forward * interactionRange, Color.magenta,0.5f);
             if(Physics.Raycast(ray, out RaycastHit hitInfo, interactionRange, collitionLayers)){
                 if(hitInfo.collider.gameObject.TryGetComponent(out IEInteractable interactableObject)){
-                    interactableObject.Interact(this);
+                    interactableObject.Interact(gameObject);
                 }
             }
         }

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public interface IEInteractable{
-    public void Interact(Interactor interactor);
+    public void Interact(GameObject interactor);
 }
