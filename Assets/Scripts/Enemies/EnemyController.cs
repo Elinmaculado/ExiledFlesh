@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour
 
     public GameObject player;
     private Transform playerPosition;
+    private NavMeshAgent navMeshAgent;
 
     #region StateMachine
     private EnemyStateMachine stateMachine;
@@ -26,9 +28,12 @@ public class EnemyController : MonoBehaviour
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
         playerPosition = player.transform;
-        
+        // Inicializa el navmesh
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.speed = moveSpeed;
+
         stateMachine = new EnemyStateMachine();
-        chasingState = new ChasingState(stateMachine,this);
+        chasingState = new ChasingState(stateMachine,this, navMeshAgent); // Tuve que agregar el navmesh ahi pq jalara
         waitState = new EnemyWaitState(stateMachine,this);
         idleState = new IdleState(stateMachine,this);
 

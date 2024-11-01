@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
@@ -13,31 +14,30 @@ public class EnemyBehavior : MonoBehaviour
     private GameObject player;
     private Transform playerPosition;
     private bool isWaiting = false;
+    private NavMeshAgent navMeshAgent;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerPosition = player.transform;
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
         if (player != null && !isWaiting)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, playerPosition.position);
 
             if (distanceToPlayer <= detectionRange)
             {
-                // Calcula la dirección hacia el jugador en el plano XZ
-                Vector3 direction = new Vector3(player.transform.position.x - transform.position.x, 0, player.transform.position.z - transform.position.z).normalized;
-
-                // Calcula la nueva posición solo en X y Z
-                Vector3 newPosition = new Vector3(transform.position.x + direction.x * moveSpeed * Time.deltaTime,
-                                                   transform.position.y, // Mantiene la posición Y
-                                                   transform.position.z + direction.z * moveSpeed * Time.deltaTime);
-
-                // Asigna la nueva posición
-                transform.position = newPosition;
+                // Actualiza la posición del destino en cada frame para seguir al jugador
+                navMeshAgent.destination = playerPosition.position;
+            }
+            else
+            {
+                // Detiene al enemigo si el jugador está fuera del rango de detección
+                navMeshAgent.ResetPath();
             }
         }
     }
@@ -47,6 +47,8 @@ public class EnemyBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isWaiting = true;
+            navMeshAgent.isStopped = true;  // Detener temporalmente el movimiento del NavMeshAgent
+
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
@@ -55,6 +57,8 @@ public class EnemyBehavior : MonoBehaviour
                 // Empujar al jugador
                 Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
                 playerHealth.PushBack(pushDirection, pushForce);
+
+                // Inicia la rutina de espera después del golpe
                 StartCoroutine(WaitAfterHit());
             }
         }
@@ -64,5 +68,6 @@ public class EnemyBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(hitCooldown);
         isWaiting = false;
+        navMeshAgent.isStopped = false;  // Reanudar el movimiento del NavMeshAgent
     }
 }
