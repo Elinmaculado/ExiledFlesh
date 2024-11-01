@@ -33,7 +33,8 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.speed = moveSpeed;
 
         stateMachine = new EnemyStateMachine();
-        chasingState = new ChasingState(stateMachine,this, navMeshAgent); // Tuve que agregar el navmesh ahi pq jalara
+        // Aqui agregué el nav mesh
+        chasingState = new ChasingState(stateMachine,this, navMeshAgent);
         waitState = new EnemyWaitState(stateMachine,this);
         idleState = new IdleState(stateMachine,this);
 
