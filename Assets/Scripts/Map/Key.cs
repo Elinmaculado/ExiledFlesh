@@ -10,7 +10,8 @@ public class Key : MonoBehaviour
     {
         Arm,
         Eye,
-        Parasite
+        Parasite,
+        None
     }
 
     public KeyType GetKeyType()

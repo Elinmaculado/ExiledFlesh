@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3141515698572290209}
   - component: {fileID: 471583943456599543}
   - component: {fileID: 8883771459162891066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6925274758536751481}
   - component: {fileID: 6175231969471031946}
   - component: {fileID: 2967453263005023428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -266,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   blockCooldown: 10
+  impulseSource: {fileID: 0}
 --- !u!1 &3766806617181199427
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +279,7 @@ GameObject:
   - component: {fileID: 3450789425103434761}
   - component: {fileID: 1557679499658499882}
   - component: {fileID: 3533368316726732631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

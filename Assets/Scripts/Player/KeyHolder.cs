@@ -53,6 +53,7 @@ public class KeyHolder : MonoBehaviour
             // Checks if we have the key corresponding to the door
             if (ContainsKey(keyDoor.GetKeyType()))
             {
+                Debug.Log("tienes la llave de la puerta");
                 //Here we can use the method to remove the key, if we did that in this game... but we dont.
                 //RemoveKey(keyDoor.GetKeyType());
                 keyDoor.OpenDoor();

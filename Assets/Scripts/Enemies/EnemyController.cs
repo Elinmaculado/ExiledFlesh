@@ -15,7 +15,8 @@ public class EnemyController : MonoBehaviour
 
     public GameObject player;
     private Transform playerPosition;
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
+
 
     #region StateMachine
     private EnemyStateMachine stateMachine;
