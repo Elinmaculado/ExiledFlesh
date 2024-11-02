@@ -5,6 +5,8 @@ public class PlayerHiddenState : PlayerState
     {
     }
 
+    public Vector3 exitPoint;
+
     public override void Enter()
     {
         base.Enter();
@@ -14,7 +16,11 @@ public class PlayerHiddenState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        controller.transform.localScale = Vector3.one;
+        controller.transform.position = exitPoint;
         controller.tag = "Player";
+        controller.rb.isKinematic = false;
+        controller.SetMeshState(true);
     }
 
     public override void FrameUpdate()
