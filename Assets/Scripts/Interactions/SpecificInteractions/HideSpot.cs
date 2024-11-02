@@ -1,13 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class HideSpot : MonoBehaviour, IEInteractable
 {
-    public void Interact(Interactor interactor){
-        if(interactor.gameObject.CompareTag("Player")){
-            interactor.tag = "HidenPlayer";
-        }
-        else{
-            interactor.tag = "Player";
+    public void Interact(GameObject interactor){
+        if(interactor.TryGetComponent(out PlayerController playerController)){
+            playerController.StateMachine.ChangeState(playerController.PlayerHiddenState);
         }
     }
+
 }

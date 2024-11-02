@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Video;
 
 [CustomEditor (typeof (FieldOfView))]
 public class FieldOfViewEditor : Editor{
