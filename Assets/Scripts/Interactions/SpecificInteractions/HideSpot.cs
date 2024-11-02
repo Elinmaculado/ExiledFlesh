@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class HideSpot : MonoBehaviour, IEInteractable
@@ -7,4 +8,5 @@ public class HideSpot : MonoBehaviour, IEInteractable
             playerController.StateMachine.ChangeState(playerController.PlayerHiddenState);
         }
     }
+
 }

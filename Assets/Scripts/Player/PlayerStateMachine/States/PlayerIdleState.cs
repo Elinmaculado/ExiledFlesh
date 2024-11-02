@@ -5,6 +5,8 @@ public class PlayerIdleState : PlayerState
     {
     }
 
+    float moveInput;
+
     public override void Enter()
     {
         base.Enter();
