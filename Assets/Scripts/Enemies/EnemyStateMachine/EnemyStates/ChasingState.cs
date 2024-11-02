@@ -60,6 +60,7 @@ public class ChasingState : EnemyState
     public override void Exit()
     {
         base.Exit();
+        Debug.Log("Exit chasing state");
         //navMeshAgent.isStopped = true;
     }
 }
