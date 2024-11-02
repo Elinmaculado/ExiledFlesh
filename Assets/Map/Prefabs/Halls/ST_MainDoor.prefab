@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5676800811580396953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8141716053057228059}
+  - component: {fileID: 1925000594441272773}
+  m_Layer: 0
+  m_Name: DoorCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8141716053057228059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676800811580396953}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5075656934279644468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1925000594441272773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676800811580396953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.68813, y: 0.4770823, z: 2.7634416}
+  m_Center: {x: 0.4309098, y: 0.3697453, z: 1.3817189}
 --- !u!1001 &34928247199972303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +63,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -12.932031
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,23 +71,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.7905884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710784
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.70710576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42,7 +95,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -62,11 +115,17 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ffb87c9aa148aec4599078d2bf80b37c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -4175879085303021829, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8141716053057228059}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8742986401928084584, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7503985241455748603}
+    - targetCorrespondingSourceObject: {fileID: 8742986401928084584, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3509236806441797486}
     - targetCorrespondingSourceObject: {fileID: 22545929824248175, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6022538177927113974}
@@ -98,6 +157,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6697211885233760411, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+--- !u!4 &5075656934279644468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4175879085303021829, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+  m_PrefabInstance: {fileID: 34928247199972303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8730584949092337575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8742986401928084584, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
@@ -118,9 +182,22 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.68813, y: 0.4770823, z: 2.7634416}
-  m_Center: {x: 0.4309098, y: 0.3697453, z: 1.3817189}
+  m_Size: {x: 1.68813, y: 1.1778883, z: 2.7634416}
+  m_Center: {x: 0.43090984, y: 0.019342275, z: 1.3817191}
+--- !u!114 &3509236806441797486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730584949092337575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c337d72aad79b940a963fac9ec4b888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorKey: 3
