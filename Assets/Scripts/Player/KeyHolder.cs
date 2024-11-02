@@ -37,7 +37,6 @@ public class KeyHolder : MonoBehaviour
     // When colliding with a key, we check the type of key and add it to the list
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Hubo trigger");
         // Checks if the object with the collider contains the Key component
         Key key = collider.GetComponent<Key>();
         if (key != null)
@@ -51,7 +50,6 @@ public class KeyHolder : MonoBehaviour
         KeyDoor keyDoor = collider.GetComponent<KeyDoor>();
         if (keyDoor != null)
         {
-            Debug.Log("es una puerta");
             // Checks if we have the key corresponding to the door
             if (ContainsKey(keyDoor.GetKeyType()))
             {

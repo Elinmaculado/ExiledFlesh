@@ -22,8 +22,18 @@ public class ChasingState : EnemyState
 
         if (controller.player != null)
         {
-            navMeshAgent.isStopped = false;
-            navMeshAgent.speed = controller.moveSpeed;
+            float distanceToPlayer = Vector3.Distance(controller.transform.position, controller.player.transform.position);
+            if (distanceToPlayer <= controller.detectionRange)
+            {
+                navMeshAgent.isStopped = false;
+                navMeshAgent.speed = controller.moveSpeed;
+                navMeshAgent.SetDestination(controller.player.transform.position);
+            }
+            else
+            {
+                // Si está fuera del rango, cambiar al estado Idle
+                stateMachine.ChangeState(controller.idleState);
+            }
         }
     }
 
@@ -39,20 +49,15 @@ public class ChasingState : EnemyState
 
         float distanceToPlayer = Vector3.Distance(controller.transform.position, controller.player.transform.position);
 
+        // Si el jugador está en rango, actualizar el destino
         if (distanceToPlayer <= controller.detectionRange)
         {
-            // Calcula la direcciï¿½n hacia el jugador en el plano XZ
-            //Vector3 direction = new Vector3(controller.player.transform.position.x -controller.transform.position.x, 0, controller.player.transform.position.z - controller.transform.position.z).normalized;
-            // Calcula la nueva posiciï¿½n solo en X y Z
-            //Vector3 newPosition = new Vector3(controller.transform.position.x + direction.x * controller.moveSpeed * Time.deltaTime,
-            //                                    controller.transform.position.y, // Mantiene la posiciï¿½n Y
-            //                                    controller.transform.position.z + direction.z * controller.moveSpeed * Time.deltaTime);
-            // Asigna la nueva posiciï¿½n
-            //controller.transform.position = newPosition;
             navMeshAgent.SetDestination(controller.player.transform.position);
         }
         else
         {
+            // Si el jugador sale del rango, detener al NavMeshAgent y cambiar a Idle
+            navMeshAgent.isStopped = true;
             stateMachine.ChangeState(controller.idleState);
         }
     }
@@ -61,6 +66,8 @@ public class ChasingState : EnemyState
     {
         base.Exit();
         Debug.Log("Exit chasing state");
-        //navMeshAgent.isStopped = true;
+
+        // Detener el NavMeshAgent cuando salga del estado Chasing
+        navMeshAgent.isStopped = true;
     }
 }

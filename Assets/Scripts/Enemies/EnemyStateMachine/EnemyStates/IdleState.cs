@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
-
 public class IdleState : EnemyState
 {
     private Vector3 wanderTarget;
     private bool isWandering = false;
-    private float waitTime = 5f; // Tiempo de espera entre movimientos
+    // Tiempo de espera antes de cambiar de punto
+    private float waitTime = 5;
+    private float wonderDistance = 5;
 
     public IdleState(EnemyStateMachine stateMachine, EnemyController controller) : base(stateMachine, controller) { }
 
@@ -14,7 +15,12 @@ public class IdleState : EnemyState
     {
         Debug.Log("Entered idle state");
         base.Enter();
-        StartWandering();
+        controller.navMeshAgent.isStopped = false;
+
+        if (!isWandering)
+        {
+            StartWandering();
+        }
     }
 
     public override void Exit()
@@ -26,14 +32,16 @@ public class IdleState : EnemyState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
-        //Debug.Log("Idle");
 
-        // Revisar si el jugador está dentro del rango
-        controller.player = GameObject.FindGameObjectWithTag("Player");
         if (controller.player != null)
         {
-            stateMachine.ChangeState(controller.chasingState);
-            return;
+            float distanceToPlayer = Vector3.Distance(controller.transform.position, controller.player.transform.position);
+            if (distanceToPlayer <= controller.detectionRange)
+            {
+                StopWandering();
+                stateMachine.ChangeState(controller.chasingState);
+                return;
+            }
         }
     }
 
@@ -52,33 +60,31 @@ public class IdleState : EnemyState
     {
         isWandering = false;
         controller.StopCoroutine(Wander());
+
+        // Dejar al enemigo en su posición actual
         controller.navMeshAgent.SetDestination(controller.transform.position);
     }
 
+    // Rutina de vagabundeo
     private IEnumerator Wander()
     {
         while (isWandering)
         {
-            // Seleccionar un nuevo punto aleatorio dentro del NavMesh solo si está cerca del destino actual
+            // Seleccionar un nuevo punto solo si ha llegado a su destino actual
             if (!controller.navMeshAgent.pathPending && controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance)
             {
-                // Seleccionar un nuevo punto aleatorio en el NavMesh
                 wanderTarget = GetRandomPointInNavMesh();
                 controller.navMeshAgent.SetDestination(wanderTarget);
-
-                // Esperar el tiempo antes de elegir un nuevo punto
-                yield return new WaitForSeconds(waitTime);
+                yield return new WaitForSeconds(waitTime); // Esperar antes de buscar un nuevo punto
             }
-
-            // Esperar un pequeño intervalo para no sobrecargar el ciclo
             yield return null;
         }
     }
 
-
+    // Método para obtener un punto aleatorio en el NavMesh
     private Vector3 GetRandomPointInNavMesh()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * 5f;
+        Vector3 randomDirection = Random.insideUnitSphere * wonderDistance;
         randomDirection += controller.transform.position;
 
         if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, 5f, NavMesh.AllAreas))
@@ -86,6 +92,7 @@ public class IdleState : EnemyState
             return hit.position;
         }
 
+        // Si no se encuentra una posición válida, devuelve la posición actual
         return controller.transform.position;
     }
 }
