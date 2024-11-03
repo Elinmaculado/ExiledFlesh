@@ -5,7 +5,6 @@ using Cinemachine;
 
 public class FixedCamera : MonoBehaviour
 {
-    public Transform player;
     public CinemachineVirtualCamera currentCamera;
 
     private void Start()
