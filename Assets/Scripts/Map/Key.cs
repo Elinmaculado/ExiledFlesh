@@ -18,4 +18,11 @@ public class Key : MonoBehaviour
     {
         return key;
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.TryGetComponent(out KeyHolder keyHolder)){
+            keyHolder.AddKey(key);
+            Destroy(gameObject);
+        }
+    }
 }

@@ -1,20 +1,30 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenDoor : MonoBehaviour, IEInteractable
+public class LockedDoor : MonoBehaviour, IEInteractable
 {
+
     [SerializeField] GameObject door;
     [SerializeField] Transform openPoint;
     [SerializeField] Transform closePoint;
     [SerializeField] float openTime;
     [SerializeField] float interpolateTime;
     bool isOpen = false;
+    [SerializeField] KeyDoor neededKey;
 
 
     public virtual void Interact(GameObject interactor){
         
         if(isOpen){return;}
-        StartCoroutine(MoveDoor(openPoint,true));
+        if(interactor.TryGetComponent(out KeyHolder keyHolder)){
+            if(keyHolder.ContainsKey(neededKey.GetKeyType())){
+                StartCoroutine(MoveDoor(openPoint,true));
+            }
+            else{
+                Debug.Log("It's locked");
+            }
+        }
     }
 
     IEnumerator MoveDoor(Transform destination, bool activateDelay){

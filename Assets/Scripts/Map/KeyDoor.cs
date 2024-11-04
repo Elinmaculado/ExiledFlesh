@@ -10,9 +10,4 @@ public class KeyDoor : MonoBehaviour
     {
         return doorKey; 
     }
-
-    public void OpenDoor()
-    {
-        gameObject.SetActive(false);
-    }
 }

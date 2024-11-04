@@ -34,6 +34,7 @@ public class KeyHolder : MonoBehaviour
     }
 
 
+    /*
     // When colliding with a key, we check the type of key and add it to the list
     private void OnTriggerEnter(Collider collider)
     {
@@ -46,6 +47,7 @@ public class KeyHolder : MonoBehaviour
             Destroy(key.gameObject);
         }
 
+        
         // Checks if the object with the collider is a door that uses a key
         KeyDoor keyDoor = collider.GetComponent<KeyDoor>();
         if (keyDoor != null)
@@ -59,5 +61,8 @@ public class KeyHolder : MonoBehaviour
                 keyDoor.OpenDoor();
             }
         }
+        
     }
+    */
+    
 }

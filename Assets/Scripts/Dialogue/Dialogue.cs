@@ -13,6 +13,10 @@ public class Dialogue : MonoBehaviour
 
     private int index;
     // Update is called once per frame
+    private void Start() {
+        dialogueBox.SetActive(false);
+        textDisplay.text = string.Empty;
+    }
     void Update()
     {
        if(Input.GetMouseButtonDown(0) && dialogueBox.activeInHierarchy){
