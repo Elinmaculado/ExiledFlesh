@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Events;
 
 public class SlidingPuzzle : MonoBehaviour
 {
@@ -13,7 +10,8 @@ public class SlidingPuzzle : MonoBehaviour
     private List<Transform> pieces;
     private int emptyLocation;
     [SerializeField] private int gridSize;
-    
+    [SerializeField] UnityEvent completionEvents;
+
     bool isShuffling = false;
 
 
@@ -55,7 +53,6 @@ public class SlidingPuzzle : MonoBehaviour
     }
 
     public void SwapPiece(Transform piece){
-        if(isShuffling){return;}
         for(int i = 0; i<pieces.Count; i++){
             if(piece == pieces[i]){
                 Debug.Log("Founded");
@@ -79,11 +76,13 @@ public class SlidingPuzzle : MonoBehaviour
     }
 
     bool CheckCompletion(){
+        if(isShuffling){return false;}
         for(int i = 0; i<pieces.Count; i++){
             if(pieces[i].name != $"{i}"){
                 return false;
             }
         }
+        completionEvents.Invoke();
         return true;
     }
 

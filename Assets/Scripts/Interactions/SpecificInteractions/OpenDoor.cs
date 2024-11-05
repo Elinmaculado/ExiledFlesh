@@ -4,8 +4,8 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour, IEInteractable
 {
     [SerializeField] GameObject door;
-    [SerializeField] Transform openPoint;
     [SerializeField] Transform closePoint;
+    [SerializeField] Transform openPoint;
     [SerializeField] float openTime;
     [SerializeField] float interpolateTime;
     bool isOpen = false;

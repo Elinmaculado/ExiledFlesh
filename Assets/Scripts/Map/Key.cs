@@ -8,6 +8,7 @@ public class Key : MonoBehaviour
 
     public enum KeyType
     {
+        Blocked,
         Arm,
         Eye,
         Parasite,

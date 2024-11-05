@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1532686320465737685}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClosePoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8141716053057228059}
   - component: {fileID: 1925000594441272773}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3234546782413922714}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OpenPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -167,14 +167,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ffb87c9aa148aec4599078d2bf80b37c, type: 2}
+    - target: {fileID: 22545929824248175, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_Name
       value: ST_MainDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5697341570593634531, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ffb87c9aa148aec4599078d2bf80b37c, type: 2}
+    - target: {fileID: 8742986401928084584, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -197,6 +209,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8742986401928084584, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3509236806441797486}
+    - targetCorrespondingSourceObject: {fileID: 8742986401928084584, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6828889676374734686}
     - targetCorrespondingSourceObject: {fileID: 22545929824248175, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6022538177927113974}
@@ -272,8 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 8730584949092337575}
-  openPoint: {fileID: 3234546782413922714}
   closePoint: {fileID: 1532686320465737685}
+  openPoint: {fileID: 3234546782413922714}
   openTime: 2
   interpolateTime: 15
 --- !u!4 &5075656934279644468 stripped
@@ -299,3 +314,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorKey: 0
+--- !u!65 &6828889676374734686
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8730584949092337575}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.68813, y: 0.4770823, z: 2.7634416}
+  m_Center: {x: 0.43090957, y: 0.36974436, z: 1.3817189}
