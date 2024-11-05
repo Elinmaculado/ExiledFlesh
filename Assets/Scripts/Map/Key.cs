@@ -8,6 +8,7 @@ public class Key : MonoBehaviour
 
     public enum KeyType
     {
+        Blocked,
         Arm,
         Eye,
         Parasite,
@@ -17,5 +18,12 @@ public class Key : MonoBehaviour
     public KeyType GetKeyType()
     {
         return key;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.TryGetComponent(out KeyHolder keyHolder)){
+            keyHolder.AddKey(key);
+            Destroy(gameObject);
+        }
     }
 }

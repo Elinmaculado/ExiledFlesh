@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -17.567436
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,27 +18,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 9.42943
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000061817246
+      value: -0.0000002980232
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000061817246
+      value: -0.000000032044458
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       propertyPath: m_CastShadows
@@ -60,6 +60,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ST_R_Corner
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -67,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7957894397133929797}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4405286273977137542}
   m_SourcePrefab: {fileID: 100100000, guid: 167fac1f5ab87674492eb2389db1dd3f, type: 3}
 --- !u!1 &1747590105126813921 stripped
 GameObject:
@@ -94,3 +105,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2717285, y: 2.2946231, z: 3.2473958}
   m_Center: {x: -1.1358447, y: -1.1466867, z: 1.6200992}
+--- !u!114 &4405286273977137542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747590105126813921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 0
+  m_AffectedAgents: ffffffff

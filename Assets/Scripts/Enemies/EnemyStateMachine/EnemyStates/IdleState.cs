@@ -13,7 +13,6 @@ public class IdleState : EnemyState
 
     public override void Enter()
     {
-        Debug.Log("Entered idle state");
         base.Enter();
         controller.navMeshAgent.isStopped = false;
 
@@ -61,7 +60,7 @@ public class IdleState : EnemyState
         isWandering = false;
         controller.StopCoroutine(Wander());
 
-        // Dejar al enemigo en su posición actual
+        // Dejar al enemigo en su posiciï¿½n actual
         controller.navMeshAgent.SetDestination(controller.transform.position);
     }
 
@@ -81,7 +80,7 @@ public class IdleState : EnemyState
         }
     }
 
-    // Método para obtener un punto aleatorio en el NavMesh
+    // Mï¿½todo para obtener un punto aleatorio en el NavMesh
     private Vector3 GetRandomPointInNavMesh()
     {
         Vector3 randomDirection = Random.insideUnitSphere * wonderDistance;
@@ -92,7 +91,7 @@ public class IdleState : EnemyState
             return hit.position;
         }
 
-        // Si no se encuentra una posición válida, devuelve la posición actual
+        // Si no se encuentra una posiciï¿½n vï¿½lida, devuelve la posiciï¿½n actual
         return controller.transform.position;
     }
 }
