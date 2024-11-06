@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody rb;
     private bool canBlock = true;
 
+    [SerializeField] PlayerController controller;
+
     // Referencia al componente CinemachineImpulseSource
     [SerializeField] private CinemachineImpulseSource impulseSource;
 
@@ -20,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, float stunDuration = 1.0f)
     {
         if (Input.GetKey(KeyCode.E) && canBlock)
         {
@@ -30,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
+            controller.EnterDamage(stunDuration);
             currentHealth -= damage;
             Debug.Log("Player health: " + currentHealth);
 
@@ -47,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (rb != null)
         {
+            direction.y = 0;
             rb.AddForce(direction * force, ForceMode.Impulse);
         }
     }

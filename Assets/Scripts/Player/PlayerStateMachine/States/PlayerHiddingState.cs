@@ -15,6 +15,7 @@ public class PlayerHiddingState : PlayerState
         controller.gameObject.transform.position = startPoint;
         controller.SetMeshState(false);
         controller.PlayerHiddenState.exitPoint = startPoint;
+        controller.SetAnimation("Walk");
     }
 
     public override void Exit()

@@ -31,7 +31,7 @@ public class ChasingState : EnemyState
             }
             else
             {
-                // Si está fuera del rango, cambiar al estado Idle
+                // Si estï¿½ fuera del rango, cambiar al estado Idle
                 stateMachine.ChangeState(controller.idleState);
             }
         }
@@ -49,7 +49,7 @@ public class ChasingState : EnemyState
 
         float distanceToPlayer = Vector3.Distance(controller.transform.position, controller.player.transform.position);
 
-        // Si el jugador está en rango, actualizar el destino
+        // Si el jugador estï¿½ en rango, actualizar el destino
         if (distanceToPlayer <= controller.detectionRange)
         {
             navMeshAgent.SetDestination(controller.player.transform.position);

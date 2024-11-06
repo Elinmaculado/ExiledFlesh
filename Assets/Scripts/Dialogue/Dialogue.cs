@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using JetBrains.Annotations;
+using System.Reflection;
+using System.Linq;
 
 public class Dialogue : MonoBehaviour
 {
@@ -12,25 +15,33 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
-    // Update is called once per frame
+    
+
     private void Start() {
         dialogueBox.SetActive(false);
         textDisplay.text = string.Empty;
     }
     void Update()
     {
-       if(Input.GetMouseButtonDown(0) && dialogueBox.activeInHierarchy){
-            if(textDisplay.text == lines[index]){
+        if (PlayNext())
+        {
+            if (textDisplay.text == lines[index]){
                 NextLine();
             }
             else{
                 StopAllCoroutines();
                 textDisplay.text = lines[index];
             }
-       } 
+        }
+    }
+
+    private bool PlayNext()
+    {
+        return (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && dialogueBox.activeInHierarchy;
     }
 
     void StartDialogue(){
+        StopAllCoroutines();
         index = 0;
         textDisplay.text = string.Empty;
         dialogueBox.SetActive(true);
@@ -52,12 +63,14 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(Typeline());
         }
         else{
+            textDisplay.text = string.Empty;
+            index = 0;
             dialogueBox.SetActive(false);
         }
     }
 
     public bool CanSetDialogues(List<string> newLines){
-        if(index>=lines.Count){
+        if(index==0){
             lines = newLines;
             StartDialogue();
             return true;
@@ -65,5 +78,11 @@ public class Dialogue : MonoBehaviour
         return false;
     }
 
+    public void AppedDialogs(List<string> dialogs){
+        lines.AddRange(dialogs);
+        StopAllCoroutines();
+        dialogueBox.SetActive(true);
+        StartCoroutine(Typeline());
+    }
 
 }

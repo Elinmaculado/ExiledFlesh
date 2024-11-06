@@ -5,6 +5,8 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [SerializeField] private KeyType key;
+    [SerializeField] private Dialogue dialogueSystem;
+    [SerializeField] private string collectMessage;
 
     public enum KeyType
     {
@@ -23,7 +25,10 @@ public class Key : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.TryGetComponent(out KeyHolder keyHolder)){
             keyHolder.AddKey(key);
+            TextAlert.instance.Alert(collectMessage,2);
             Destroy(gameObject);
         }
     }
+
+    
 }

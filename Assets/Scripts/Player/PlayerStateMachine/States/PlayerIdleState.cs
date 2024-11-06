@@ -1,4 +1,8 @@
+using System.Net.Http.Headers;
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.UIElements;
 public class PlayerIdleState : PlayerState
 {
     public PlayerIdleState(PlayerStateMachine stateMachine, PlayerController controller) : base(stateMachine, controller)
@@ -15,21 +19,16 @@ public class PlayerIdleState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        controller.rb.velocity = Vector3.zero;
     }
 
     public override void FrameUpdate()
     {
         base.FrameUpdate();
 
-        // Movimiento hacia adelante y atrás    
-         if (Input.GetKey(KeyCode.W))
-        {
-            controller.transform.Translate(Vector3.forward * controller.currentSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S)) 
-        {
-            controller.transform.Translate(-Vector3.forward * (controller.currentSpeed/2) * Time.deltaTime);
-        }
+        // Movimiento hacia adelante y atrás  
+        moveInput = Input.GetAxisRaw("Vertical") * controller.currentSpeed;
+        moveInput = Mathf.Clamp(moveInput,-controller.currentSpeed/2,controller.currentSpeed) * Time.deltaTime;
 
         // Rotación a la izquierda y derecha
         if (Input.GetKey(KeyCode.A))
@@ -55,5 +54,14 @@ public class PlayerIdleState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if(moveInput !=0){
+            controller.SetAnimation("Walk");
+            controller.rb.velocity = moveInput * controller.transform.forward;
+            
+        }
+        else{
+            controller.SetAnimation("Idle");
+            controller.rb.velocity = Vector3.zero;
+        }
     }
 }
