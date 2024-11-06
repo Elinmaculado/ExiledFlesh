@@ -14,6 +14,10 @@ public class FollowingCamera : MonoBehaviour
     bool isFollowing;
     Vector3 newPosition;
 
+    [SerializeField] Transform minClamp;
+    [SerializeField] Transform maxClamp;
+    
+
     private void Start()
     {
         currentCamera.Priority = 0;
@@ -25,8 +29,14 @@ public class FollowingCamera : MonoBehaviour
         if (isFollowing)
         {
             newPosition = currentCamera.transform.position;
-            if (followX) { newPosition.x = player.position.x; }
-            if (followZ) { newPosition.z = player.position.z; }
+            if (followX) { 
+                newPosition.x = player.position.x; 
+                newPosition.x = Mathf.Clamp(newPosition.x,minClamp.transform.position.x,maxClamp.transform.position.x);
+            }
+            if (followZ) { 
+                newPosition.z = player.position.z; 
+                newPosition.z = Mathf.Clamp(newPosition.z,minClamp.transform.position.z,maxClamp.transform.position.z);
+            }
             currentCamera.transform.position = newPosition;
         }
     }

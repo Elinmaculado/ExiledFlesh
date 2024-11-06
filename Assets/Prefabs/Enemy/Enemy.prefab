@@ -18,7 +18,7 @@ GameObject:
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a986ae0360802cd4eb711d7d250e2da0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,6 +129,23 @@ MonoBehaviour:
   pushForce: 5
   player: {fileID: 0}
   navMeshAgent: {fileID: 0}
+  grunts:
+  - {fileID: 8300000, guid: 8564752119273624e859b52a5b3c3187, type: 3}
+  - {fileID: 8300000, guid: 78ecb7405fd334d47afa26c743c31b6e, type: 3}
+  - {fileID: 8300000, guid: 8d72dc35eb068394d917ca3b137a1896, type: 3}
+  - {fileID: 8300000, guid: e05ed01b78e40d246b9d3f557df58f9d, type: 3}
+  - {fileID: 8300000, guid: 1827f990c8ffd7b4684ac5e0494650ac, type: 3}
+  - {fileID: 8300000, guid: 27891155a7fbc8c408d0494e7f04c88e, type: 3}
+  - {fileID: 8300000, guid: aae800d73eb187e4c93764d24ed042fd, type: 3}
+  - {fileID: 8300000, guid: 792a9cfa30c682240bbd7a028fc42bbc, type: 3}
+  - {fileID: 8300000, guid: 2ebe81b8e40c026408a45f6f89a1bb39, type: 3}
+  - {fileID: 8300000, guid: fa39b5ac9a7f02c47a067ad0dd48fd1e, type: 3}
+  - {fileID: 8300000, guid: a632ef836c343f445b05b7495525d38e, type: 3}
+  - {fileID: 8300000, guid: 894be14b3bd478448bb63c8ced25e036, type: 3}
+  - {fileID: 8300000, guid: ec8b16daa3fe5eb4485e50d665a6130c, type: 3}
+  - {fileID: 8300000, guid: 55be3451e2d5333448c1cbd88671f037, type: 3}
+  - {fileID: 8300000, guid: fe0d4d88eb792e34e854761367a97af6, type: 3}
+  audioSource: {fileID: 0}
 --- !u!54 &775580059805249655
 Rigidbody:
   m_ObjectHideFlags: 0

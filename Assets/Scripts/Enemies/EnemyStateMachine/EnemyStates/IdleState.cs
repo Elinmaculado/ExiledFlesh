@@ -6,7 +6,7 @@ public class IdleState : EnemyState
     private Vector3 wanderTarget;
     private bool isWandering = false;
     // Tiempo de espera antes de cambiar de punto
-    private float waitTime = 5;
+    private float waitTime = 3;
     private float wonderDistance = 5;
 
     public IdleState(EnemyStateMachine stateMachine, EnemyController controller) : base(stateMachine, controller) { }

@@ -11,6 +11,7 @@ public class InteractPuzzle : MonoBehaviour, IEInteractable {
     [SerializeField] CinemachineVirtualCamera roomCamera;
 
     UnityEvent currentInteraction;
+    [SerializeField] PlayerController playerController;
     
 
     bool isFocused = false;
@@ -29,6 +30,7 @@ public class InteractPuzzle : MonoBehaviour, IEInteractable {
     }
 
     public void ExitPuzzle(){
+        playerController.StateMachine.ChangeState(playerController.PlayerIdleState);
         puzzle.enabled = false;
         puzzleCamera.Priority = 0;
         roomCamera.Priority = 1;
@@ -37,6 +39,7 @@ public class InteractPuzzle : MonoBehaviour, IEInteractable {
 
     public void EnterPuzzle(){
         Debug.Log("Enter puzzle");
+        playerController.StateMachine.ChangeState(playerController.PlayerPuzzleState);
         puzzle.enabled = true;
         puzzleCamera.Priority = 1;
         roomCamera.Priority = 0;
