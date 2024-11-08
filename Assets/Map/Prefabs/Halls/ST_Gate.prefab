@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &679302341631109044
+--- !u!1 &184074928955823737
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,30 +8,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3096856750120316700}
-  m_Layer: 9
-  m_Name: ST_Gate_R_Open
+  - component: {fileID: 8627980750896003728}
+  m_Layer: 3
+  m_Name: ST_Gate_L_Close
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3096856750120316700
+--- !u!4 &8627980750896003728
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679302341631109044}
+  m_GameObject: {fileID: 184074928955823737}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.825007, y: -0.003595734, z: 0.6921646}
+  m_LocalPosition: {x: 4.2345285, y: -0.0035948944, z: 0.6921635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1222696397823132057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2086353287568002132
+--- !u!1 &596295414344816912
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,21 +39,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7388019462175072791}
-  m_Layer: 9
-  m_Name: ST_Gate_R_Close
+  - component: {fileID: 7937615281419994270}
+  m_Layer: 3
+  m_Name: ST_Gate_R_Open
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7388019462175072791
+--- !u!4 &7937615281419994270
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086353287568002132}
+  m_GameObject: {fileID: 596295414344816912}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.825007, y: -0.0035957335, z: 0.6921646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1222696397823132057}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4111950803337644392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7750638351714553531}
+  m_Layer: 3
+  m_Name: ST_Gate_Close
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7750638351714553531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111950803337644392}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 1.6749929, y: -0.0035957335, z: 0.6921646}
@@ -62,7 +93,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1222696397823132057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7896586912755560568
+--- !u!1 &9176913552598735215
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,55 +101,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8077323750221160744}
-  m_Layer: 9
+  - component: {fileID: 8619160872559121948}
+  m_Layer: 3
   m_Name: ST_Gate_L_Open
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8077323750221160744
+--- !u!4 &8619160872559121948
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7896586912755560568}
+  m_GameObject: {fileID: 9176913552598735215}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 6.734529, y: -0.0035948944, z: 0.6921635}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1222696397823132057}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7991142660833786605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8422463838615512353}
-  m_Layer: 9
-  m_Name: ST_Gate_L_Close
-  m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8422463838615512353
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7991142660833786605}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.2345285, y: -0.0035948944, z: 0.6921635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -134,19 +134,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.92848
+      value: -131.47961
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00000055134296
+      value: -0.000002861023
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.431057
+      value: -45.08995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6830829354061079961, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -6681109331967652941, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -190,11 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1144067591344020161, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6823612635897972724, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -202,30 +202,30 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 52fb35d974883ee4096e9e44bc40a0cb, type: 2}
     - target: {fileID: 6839800862722936125, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 8422463838615512353}
+      addedObject: {fileID: 8627980750896003728}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 8077323750221160744}
+      addedObject: {fileID: 8619160872559121948}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       insertIndex: 4
-      addedObject: {fileID: 7388019462175072791}
+      addedObject: {fileID: 7750638351714553531}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       insertIndex: 5
-      addedObject: {fileID: 3096856750120316700}
+      addedObject: {fileID: 7937615281419994270}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 143909686982495613}
+      addedObject: {fileID: 5685357154055673986}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5327681213342311876}
+      addedObject: {fileID: 64364016185931930}
     - targetCorrespondingSourceObject: {fileID: 1144067591344020161, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7834159803626038007}
@@ -272,7 +272,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
   m_PrefabInstance: {fileID: 1692608644695762546}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &143909686982495613
+--- !u!114 &5685357154055673986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,15 +284,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3c32bde5d251c42958de57449ed342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door1: {fileID: 5302566612499065679}
-  closePoint1: {fileID: 7388019462175072791}
-  openPoint1: {fileID: 3096856750120316700}
-  door2: {fileID: 1773804663951359155}
-  closePoint2: {fileID: 8422463838615512353}
-  openPoint2: {fileID: 8077323750221160744}
-  openTime: 0
+  door1: {fileID: 1773804663951359155}
+  closePoint1: {fileID: 8627980750896003728}
+  openPoint1: {fileID: 8619160872559121948}
+  door2: {fileID: 5302566612499065679}
+  closePoint2: {fileID: 7750638351714553531}
+  openPoint2: {fileID: 7937615281419994270}
+  openTime: 3
   interpolateTime: 15
---- !u!65 &5327681213342311876
+--- !u!65 &64364016185931930
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,8 +311,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.9282475, y: 3.2177112, z: 0.9235277}
-  m_Center: {x: 2.9569483, y: 1.6356684, z: 0.3696189}
+  m_Size: {x: 6.577507, y: 3.2608573, z: 0.76904297}
+  m_Center: {x: 2.7887535, y: 1.6166345, z: 0.35857904}
 --- !u!1 &3911761642298833941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6830829354061079961, guid: 698c233f58b2e43468db62b795d6899b, type: 3}
