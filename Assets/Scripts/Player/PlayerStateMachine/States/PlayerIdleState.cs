@@ -28,7 +28,7 @@ public class PlayerIdleState : PlayerState
 
         // Movimiento hacia adelante y atrás  
         moveInput = Input.GetAxisRaw("Vertical") * controller.currentSpeed;
-        moveInput = Mathf.Clamp(moveInput,-controller.currentSpeed/2,controller.currentSpeed) * Time.deltaTime;
+        moveInput = Mathf.Clamp(moveInput,-controller.currentSpeed/2,controller.currentSpeed);
 
         // Rotación a la izquierda y derecha
         if (Input.GetKey(KeyCode.A))
