@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OpenDoor : MonoBehaviour, IEInteractable
 {
@@ -9,11 +10,13 @@ public class OpenDoor : MonoBehaviour, IEInteractable
     [SerializeField] float openTime;
     [SerializeField] float interpolateTime;
     bool isOpen = false;
+    [SerializeField] UnityEvent onOpen;
 
 
     public virtual void Interact(GameObject interactor){
         
         if(isOpen){return;}
+        onOpen.Invoke();
         StartCoroutine(MoveDoor(openPoint,true));
     }
 
