@@ -17,7 +17,7 @@ public class OpenDualDoor : MonoBehaviour, IEInteractable
 
 
     public virtual void Interact(GameObject interactor){
-        
+        Debug.Log("Interact");
         if(isOpen){return;}
         StartCoroutine(MoveDoor(door1,openPoint1,true));
         StartCoroutine(MoveDoor(door2,openPoint2,true));

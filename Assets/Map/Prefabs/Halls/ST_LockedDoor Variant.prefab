@@ -76,9 +76,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8680564384297405806}
   m_SourcePrefab: {fileID: 100100000, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
---- !u!4 &53498940137185435 stripped
+--- !u!4 &1578059534560591617 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3234546782413922714, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4159952631624662528, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
   m_PrefabInstance: {fileID: 3196845631001231617}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2368898859937073055 stripped
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 6157615759923332774}
-  openPoint: {fileID: 53498940137185435}
-  closePoint: {fileID: 4114117696883488468}
+  openPoint: {fileID: 7396741252250296134}
+  closePoint: {fileID: 1578059534560591617}
   openTime: 2
   interpolateTime: 15
   neededKey: {fileID: 8680564384297405806}
@@ -118,13 +118,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorKey: 0
---- !u!4 &4114117696883488468 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1532686320465737685, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
-  m_PrefabInstance: {fileID: 3196845631001231617}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6157615759923332774 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8730584949092337575, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+  m_PrefabInstance: {fileID: 3196845631001231617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7396741252250296134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5403187963688246855, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
   m_PrefabInstance: {fileID: 3196845631001231617}
   m_PrefabAsset: {fileID: 0}

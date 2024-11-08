@@ -56,10 +56,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ST_HallWall
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 2ed2c9a7d164ff648b3701a8176e5943, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
