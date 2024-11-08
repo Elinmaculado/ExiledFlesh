@@ -55,7 +55,10 @@ public class PlayerIdleState : PlayerState
     {
         base.PhysicsUpdate();
         if(moveInput !=0){
-            controller.SetAnimation("Walk");
+            
+            if(moveInput>0){controller.SetAnimation("Walk");}
+            else{controller.SetAnimation("WalkBack");}
+
             controller.rb.velocity = moveInput * controller.transform.forward;
             
         }
