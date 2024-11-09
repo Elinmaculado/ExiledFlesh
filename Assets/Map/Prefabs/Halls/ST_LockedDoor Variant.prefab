@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12400743591254688, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 573837812424924196, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.932031
@@ -52,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ST_LockedDoor Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 918029398030288542, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3234546782413922714, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.15
@@ -64,6 +72,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.74
       objectReference: {fileID: 0}
+    - target: {fileID: 4845007799233186118, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283962884276265223, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5723251552344834860, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -72,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6545db0833da30844a460e82380d8960, type: 2}
+    - target: {fileID: 8730584949092337575, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4829639657397222850, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
     - {fileID: 6725523472417178265, guid: eca285a736126bd41ba0b37037e4541f, type: 3}

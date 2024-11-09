@@ -118,6 +118,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 22545929824248175, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa49456b0d706de4da9d46a7980a4e82, type: 3}
       propertyPath: m_Name
       value: ST_MainDoor
@@ -215,6 +219,9 @@ MonoBehaviour:
   openPoint: {fileID: 5403187963688246855}
   openTime: 3
   interpolateTime: 15
+  onOpen:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &4674557755830484812
 BoxCollider:
   m_ObjectHideFlags: 0
