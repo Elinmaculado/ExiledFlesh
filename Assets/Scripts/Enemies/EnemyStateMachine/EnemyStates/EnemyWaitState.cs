@@ -8,6 +8,7 @@ public class EnemyWaitState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        controller.Animator.SetBool("isWalking",false);
     }
 
     public override void Exit()

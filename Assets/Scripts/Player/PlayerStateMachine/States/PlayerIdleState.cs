@@ -64,7 +64,7 @@ public class PlayerIdleState : PlayerState
         }
         else{
             controller.SetAnimation("Idle");
-            controller.rb.velocity = Vector3.zero;
+            controller.rb.velocity = new Vector3(0,controller.rb.velocity.y,0);
         }
     }
 }

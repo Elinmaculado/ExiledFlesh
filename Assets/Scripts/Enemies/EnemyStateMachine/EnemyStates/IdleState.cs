@@ -31,7 +31,6 @@ public class IdleState : EnemyState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
-
         if (controller.player != null)
         {
             float distanceToPlayer = Vector3.Distance(controller.transform.position, controller.player.transform.position);
@@ -72,9 +71,13 @@ public class IdleState : EnemyState
             // Seleccionar un nuevo punto solo si ha llegado a su destino actual
             if (!controller.navMeshAgent.pathPending && controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance)
             {
+                //Idle
                 wanderTarget = GetRandomPointInNavMesh();
-                controller.navMeshAgent.SetDestination(wanderTarget);
+                controller.Animator.SetBool("isWalking",false);
                 yield return new WaitForSeconds(waitTime); // Esperar antes de buscar un nuevo punto
+                controller.Animator.SetBool("isWalking",true);
+                controller.navMeshAgent.SetDestination(wanderTarget);
+                //Walk again
             }
             yield return null;
         }

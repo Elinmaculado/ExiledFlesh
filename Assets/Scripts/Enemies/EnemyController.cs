@@ -24,9 +24,12 @@ public class EnemyController : MonoBehaviour
     public ChasingState chasingState{get; private set;}
     public IdleState idleState{get; private set;}
     private EnemyWaitState waitState;
+    [SerializeField] Animator enemyAnimator;
+    public Animator Animator {get; private set;}
     #endregion
 
     void Start(){
+        Animator = enemyAnimator;
         player = GameObject.FindGameObjectWithTag("Player");
         playerPosition = player.transform;
         // Inicializa el navmesh
@@ -34,7 +37,7 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.speed = moveSpeed;
 
         stateMachine = new EnemyStateMachine();
-        // Aqui agregué el nav mesh
+        // Aqui agreguï¿½ el nav mesh
         chasingState = new ChasingState(stateMachine,this, navMeshAgent);
         waitState = new EnemyWaitState(stateMachine,this);
         idleState = new IdleState(stateMachine,this);
@@ -52,6 +55,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             if (collision.gameObject.TryGetComponent( out PlayerHealth playerHealth)){
+                Animator.SetTrigger("Attack");
                 playerHealth.TakeDamage(damage);
                 // Empujar al jugador
                 Vector3 pushDirection = (collision.transform.position - transform.position).normalized;
