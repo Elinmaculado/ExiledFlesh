@@ -26,9 +26,9 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
                 StartCoroutine(MoveDoor(door1,openPoint1,true));
                 StartCoroutine(MoveDoor(door2,openPoint2,true));
             }
-        }
-        else{
-            TextAlert.instance.Alert(lockedMessage,1.5f);
+            else{
+                TextAlert.instance.Alert(lockedMessage,1.5f);
+            }
         }
     }
 
