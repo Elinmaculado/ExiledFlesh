@@ -4,7 +4,8 @@ public class Teleportation : MonoBehaviour
 {
     [SerializeField] private Transform floor1;
     [SerializeField] private Transform floor2;
-    [SerializeField] private Transform floor3;
+    [SerializeField] private Transform floor3a;
+    [SerializeField] private Transform floor3b;
     [SerializeField] private Transform floor4;
     private GameObject player;
 
@@ -32,14 +33,23 @@ public class Teleportation : MonoBehaviour
         player.transform.position = floor2.transform.position;
     }
 
-    public void TeleportFloor3()
+    public void TeleportFloor3a()
     {
-        Invoke("Floor3", 0.5f);
+        Invoke("Floor3a", 0.5f);
     }
 
-    public void Floor3()
+    public void Floor3a()
     {
-        player.transform.position = floor3.transform.position;
+        player.transform.position = floor3a.transform.position;
+    }
+    public void TeleportFloor3b()
+    {
+        Invoke("Floor3b", 0.5f);
+    }
+
+    public void Floor3b()
+    {
+        player.transform.position = floor3b.transform.position;
     }
 
     public void TeleportFloor4()
