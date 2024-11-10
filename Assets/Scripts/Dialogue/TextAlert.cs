@@ -7,6 +7,7 @@ public class TextAlert : MonoBehaviour
     [SerializeField] TextMeshProUGUI alertDisplay;
     public static TextAlert instance;
     public float textSpeed;
+    [SerializeField] PlayRandomSound sound;
 
     void Awake(){
         if(instance == null){
@@ -33,6 +34,7 @@ public class TextAlert : MonoBehaviour
         yield   return new WaitForSeconds(textSpeed);
         foreach(char c in text.ToCharArray()){
             alertDisplay.text += c;
+            sound.PlaySoundOneShot();
             yield return new WaitForSeconds(textSpeed);
         }
         StartCoroutine(ClearDelay(duration));
