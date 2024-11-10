@@ -15,6 +15,8 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
     [SerializeField] float interpolateTime;
     [SerializeField] KeyDoor neededKey;
     [SerializeField] string lockedMessage = "It's locked";
+    public AudioSource openAudio;
+    public AudioSource closeAudio;
     bool isOpen = false;
 
 
@@ -23,6 +25,7 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
         if(isOpen){return;}
         if(interactor.TryGetComponent(out KeyHolder keyHolder)){
             if(keyHolder.ContainsKey(neededKey.GetKeyType())){
+                openAudio.Play();
                 StartCoroutine(MoveDoor(door1,openPoint1,true));
                 StartCoroutine(MoveDoor(door2,openPoint2,true));
             }
@@ -51,6 +54,7 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
     IEnumerator Delay(){
         Debug.Log("delay");
         yield return new WaitForSeconds(openTime);
+        closeAudio.Play();
         StartCoroutine(MoveDoor(door1,closePoint1,false));
         StartCoroutine(MoveDoor(door2,closePoint2,false));
     }

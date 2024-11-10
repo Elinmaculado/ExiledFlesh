@@ -13,6 +13,8 @@ public class LockedDoor : MonoBehaviour, IEInteractable
     bool isOpen = false;
     [SerializeField] KeyDoor neededKey;
     [SerializeField] string lockedMessage = "It's locked";
+    public AudioSource openAudio;
+    public AudioSource closeAudio;
 
 
     public virtual void Interact(GameObject interactor){
@@ -20,6 +22,7 @@ public class LockedDoor : MonoBehaviour, IEInteractable
         if(isOpen){return;}
         if(interactor.TryGetComponent(out KeyHolder keyHolder)){
             if(keyHolder.ContainsKey(neededKey.GetKeyType())){
+                openAudio.Play();
                 StartCoroutine(MoveDoor(openPoint,true));
             }
             else{
@@ -41,6 +44,7 @@ public class LockedDoor : MonoBehaviour, IEInteractable
     IEnumerator Delay(){
         Debug.Log("delay");
         yield return new WaitForSeconds(openTime);
+        closeAudio.Play();
         StartCoroutine(MoveDoor(closePoint,false));
     }
 
