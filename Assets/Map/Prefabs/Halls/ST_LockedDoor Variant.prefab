@@ -134,6 +134,8 @@ MonoBehaviour:
   interpolateTime: 15
   neededKey: {fileID: 8680564384297405806}
   lockedMessage: It's locked
+  openAudio: {fileID: 9042899309301381705}
+  closeAudio: {fileID: 6573583882668074336}
 --- !u!114 &8680564384297405806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +154,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8730584949092337575, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
   m_PrefabInstance: {fileID: 3196845631001231617}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &6573583882668074336 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8603974940724520033, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+  m_PrefabInstance: {fileID: 3196845631001231617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7396741252250296134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5403187963688246855, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
+  m_PrefabInstance: {fileID: 3196845631001231617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &9042899309301381705 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5846709341601545032, guid: eca285a736126bd41ba0b37037e4541f, type: 3}
   m_PrefabInstance: {fileID: 3196845631001231617}
   m_PrefabAsset: {fileID: 0}

@@ -11,11 +11,14 @@ public class OpenDoor : MonoBehaviour, IEInteractable
     [SerializeField] float interpolateTime;
     bool isOpen = false;
     [SerializeField] UnityEvent onOpen;
+    public AudioSource openAudio;
+    public AudioSource closeAudio;
 
 
     public virtual void Interact(GameObject interactor){
         
         if(isOpen){return;}
+        openAudio.Play();
         onOpen.Invoke();
         StartCoroutine(MoveDoor(openPoint,true));
     }
@@ -33,6 +36,7 @@ public class OpenDoor : MonoBehaviour, IEInteractable
     IEnumerator Delay(){
         Debug.Log("delay");
         yield return new WaitForSeconds(openTime);
+        closeAudio.Play();
         StartCoroutine(MoveDoor(closePoint,false));
     }
 

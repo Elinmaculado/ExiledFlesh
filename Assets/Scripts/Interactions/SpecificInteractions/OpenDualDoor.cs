@@ -13,11 +13,14 @@ public class OpenDualDoor : MonoBehaviour, IEInteractable
     [SerializeField] Transform openPoint2;
     [SerializeField] float openTime;
     [SerializeField] float interpolateTime;
+    public AudioSource openAudio;
+    public AudioSource closeAudio;
     bool isOpen = false;
 
 
     public virtual void Interact(GameObject interactor){
         Debug.Log("Interact");
+        openAudio.Play();
         if(isOpen){return;}
         StartCoroutine(MoveDoor(door1,openPoint1,true));
         StartCoroutine(MoveDoor(door2,openPoint2,true));
@@ -42,6 +45,7 @@ public class OpenDualDoor : MonoBehaviour, IEInteractable
     IEnumerator Delay(){
         Debug.Log("delay");
         yield return new WaitForSeconds(openTime);
+        closeAudio.Play();
         StartCoroutine(MoveDoor(door1,closePoint1,false));
         StartCoroutine(MoveDoor(door2,closePoint2,false));
     }
