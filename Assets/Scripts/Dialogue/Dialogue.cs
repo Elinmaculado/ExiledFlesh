@@ -15,6 +15,7 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    [SerializeField] PlayRandomSound sound;
     
 
     private void Start() {
@@ -52,6 +53,7 @@ public class Dialogue : MonoBehaviour
             yield   return new WaitForSeconds(textSpeed);
         foreach(char c in lines[index].ToCharArray()){
             textDisplay.text += c;
+            sound.PlaySoundOneShot();
             yield return new WaitForSeconds(textSpeed);
         }
     }
