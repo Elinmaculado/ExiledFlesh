@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Video;
 
 public class RotatingPuzzle : MonoBehaviour
@@ -12,8 +13,9 @@ public class RotatingPuzzle : MonoBehaviour
     [SerializeField] GameObject rotationObject;
     bool isShuffled = false;
     [SerializeField] int totalShuffle;
+    [SerializeField] UnityEvent onCompletion;
     
-    void Start(){
+    void Awake(){
         originalPos = rotationObject.transform.rotation;
         Shuffle();
     }
@@ -50,7 +52,7 @@ public class RotatingPuzzle : MonoBehaviour
 
     void CheckCorrect(){
         if(originalPos == rotationObject.transform.rotation && isShuffled){
-            Debug.Log("Solved");
+            onCompletion.Invoke();
         }
     }
 
@@ -82,7 +84,12 @@ public class RotatingPuzzle : MonoBehaviour
                     break;
             }
         }
-        isShuffled = true;
+        if(originalPos == rotationObject.transform.rotation){
+            Shuffle();
+        }
+        else{
+            isShuffled = true;
+        }
     }
 
   

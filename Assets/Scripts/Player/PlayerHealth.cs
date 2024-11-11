@@ -5,9 +5,10 @@ using Cinemachine; // Aseg�rate de importar Cinemachine al principio
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 2;
+    public float maxHealth = 2;
     public float blockCooldown;
-    private int currentHealth;
+    [SerializeField] private float currentHealth;
+    public float healAmount;
     private Rigidbody rb;
     private bool canBlock = true;
 
@@ -15,11 +16,20 @@ public class PlayerHealth : MonoBehaviour
 
     // Referencia al componente CinemachineImpulseSource
     [SerializeField] private CinemachineImpulseSource impulseSource;
+    [SerializeField] LifeScreen lifeScreen;
 
     void Start()
     {
         currentHealth = maxHealth;
+        lifeScreen.SetAlpha(1-(currentHealth/maxHealth));
         rb = GetComponent<Rigidbody>();
+    }
+
+    void Update(){
+        if(currentHealth<=maxHealth){
+            currentHealth += healAmount * Time.deltaTime;
+            lifeScreen.SetAlpha(1-(currentHealth/maxHealth));
+        }
     }
 
     public void TakeDamage(int damage, float stunDuration = 1.0f)
@@ -35,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
             controller.EnterDamage(stunDuration);
             currentHealth -= damage;
             Debug.Log("Player health: " + currentHealth);
+            lifeScreen.SetAlpha(currentHealth/maxHealth);
 
             // Genera el impulso para sacudir la c�mara
             if(impulseSource != null){impulseSource.GenerateImpulse();}

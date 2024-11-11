@@ -11,6 +11,7 @@ public class TPActivattion : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             TeleporationCanvas.SetActive(true);
+            TeleporationCanvas.GetComponent<TPCanvasController>().CheckKeys();
         }
     }
 

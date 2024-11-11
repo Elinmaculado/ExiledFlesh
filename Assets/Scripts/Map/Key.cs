@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Key : MonoBehaviour
 {
     [SerializeField] private KeyType key;
     [SerializeField] private Dialogue dialogueSystem;
     [SerializeField] private string collectMessage;
+    [SerializeField] UnityEvent onCollect;
 
     public enum KeyType
     {
@@ -15,7 +17,10 @@ public class Key : MonoBehaviour
         Eye,
         Parasite,
         None,
-        SlidingPuzzle
+        SlidingPuzzle,
+        RotatingPuzzle,
+        Path,
+        FaithElevator
     }
 
     public KeyType GetKeyType()
@@ -26,6 +31,7 @@ public class Key : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.TryGetComponent(out KeyHolder keyHolder)){
             keyHolder.AddKey(key);
+            onCollect.Invoke();
             TextAlert.instance.Alert(collectMessage,2);
             Destroy(gameObject);
         }
