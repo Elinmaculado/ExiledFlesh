@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TPActivattion : MonoBehaviour
 {
+    public GameObject TeleporationPanel;
     public GameObject TeleporationCanvas;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            TeleporationCanvas.SetActive(true);
+            TeleporationPanel.SetActive(true);
             TeleporationCanvas.GetComponent<TPCanvasController>().CheckKeys();
         }
     }
@@ -19,7 +20,7 @@ public class TPActivattion : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            TeleporationCanvas.SetActive(false);
+            TeleporationPanel.SetActive(false);
         }
     }
 }

@@ -47,7 +47,6 @@ public class SlidingPuzzle : MonoBehaviour
                 mesh.uv = uv;
                 if(row == (gridSize - 1) && col == (gridSize - 1)){
                     emptyLocation = (row*gridSize)+ col;
-                    Debug.Log(emptyLocation);
                     piece.gameObject.SetActive(false);
                     theOnePiece = piece.gameObject;
                     Mesh _mesh = keyMesh.GetComponent<MeshFilter>().mesh;
