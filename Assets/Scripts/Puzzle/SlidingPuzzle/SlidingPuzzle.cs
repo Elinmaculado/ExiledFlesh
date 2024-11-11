@@ -11,11 +11,14 @@ public class SlidingPuzzle : MonoBehaviour
     private int emptyLocation;
     [SerializeField] private int gridSize;
     [SerializeField] UnityEvent completionEvents;
+    [SerializeField] MeshFilter keyMesh;
 
     bool isShuffling = false;
 
+    GameObject theOnePiece;
 
-    private void Start() {
+
+    private void Awake() {
         pieces = new List<Transform>();
         CreateGamePieces();
         Shuffle();
@@ -34,11 +37,6 @@ public class SlidingPuzzle : MonoBehaviour
                 piece.localScale = (widht-pieceGap)*Vector3.one;
                 piece.name = $"{(row * gridSize)+col}";
 
-                if(row == (gridSize - 1) && col == (gridSize - 1)){
-                    emptyLocation = (row*gridSize)+ col;
-                    Debug.Log(emptyLocation);
-                    piece.gameObject.SetActive(false);
-                }
                 float gap = pieceGap/2;
                 Mesh mesh = piece.GetComponent<MeshFilter>().mesh;
                 Vector2[] uv = new Vector2[4];
@@ -47,6 +45,14 @@ public class SlidingPuzzle : MonoBehaviour
                 uv[2] = new Vector2((widht*col)+gap,1-((widht*row)+gap));
                 uv[3] = new Vector2((widht*(col+1))-gap,1-(widht*row)+gap);
                 mesh.uv = uv;
+                if(row == (gridSize - 1) && col == (gridSize - 1)){
+                    emptyLocation = (row*gridSize)+ col;
+                    Debug.Log(emptyLocation);
+                    piece.gameObject.SetActive(false);
+                    theOnePiece = piece.gameObject;
+                    Mesh _mesh = keyMesh.GetComponent<MeshFilter>().mesh;
+                    _mesh.uv = uv;
+                }
             }
         }
         piecePrefab.gameObject.SetActive(false);
@@ -103,5 +109,8 @@ public class SlidingPuzzle : MonoBehaviour
             
         }
         isShuffling = false;
+    }
+    public void TheOnePiece(){
+        theOnePiece.SetActive(true);
     }
 }

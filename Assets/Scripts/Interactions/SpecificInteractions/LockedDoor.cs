@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LockedDoor : MonoBehaviour, IEInteractable
 {
@@ -15,6 +16,8 @@ public class LockedDoor : MonoBehaviour, IEInteractable
     [SerializeField] string lockedMessage = "It's locked";
     public AudioSource openAudio;
     public AudioSource closeAudio;
+    [SerializeField] UnityEvent onOpen;
+
 
 
     public virtual void Interact(GameObject interactor){
@@ -23,6 +26,7 @@ public class LockedDoor : MonoBehaviour, IEInteractable
         if(interactor.TryGetComponent(out KeyHolder keyHolder)){
             if(keyHolder.ContainsKey(neededKey.GetKeyType())){
                 openAudio.Play();
+                onOpen.Invoke();
                 StartCoroutine(MoveDoor(openPoint,true));
             }
             else{

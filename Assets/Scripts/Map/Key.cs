@@ -14,7 +14,8 @@ public class Key : MonoBehaviour
         Arm,
         Eye,
         Parasite,
-        None
+        None,
+        SlidingPuzzle
     }
 
     public KeyType GetKeyType()

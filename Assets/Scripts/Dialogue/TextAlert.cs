@@ -25,6 +25,10 @@ public class TextAlert : MonoBehaviour
         StartCoroutine(Typeline(message, duration));
     }
 
+    public void Alert(string message){
+        Alert(message,2f);
+    }
+
     IEnumerator ClearDelay(float duration){
         yield return new WaitForSeconds(duration);
         alertDisplay.text = string.Empty;

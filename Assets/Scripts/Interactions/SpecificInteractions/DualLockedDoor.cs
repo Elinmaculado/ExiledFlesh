@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DualLockedDoor : MonoBehaviour, IEInteractable
 {
@@ -18,6 +19,8 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
     public AudioSource openAudio;
     public AudioSource closeAudio;
     bool isOpen = false;
+    [SerializeField] UnityEvent onOpen;
+
 
 
     public virtual void Interact(GameObject interactor){
@@ -28,6 +31,7 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
                 openAudio.Play();
                 StartCoroutine(MoveDoor(door1,openPoint1,true));
                 StartCoroutine(MoveDoor(door2,openPoint2,true));
+                onOpen.Invoke();
             }
             else{
                 TextAlert.instance.Alert(lockedMessage,1.5f);
