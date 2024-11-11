@@ -10,20 +10,20 @@ public class TPCanvasController : MonoBehaviour
     [SerializeField] private Button button4;
     void Start()
     {
-        // Activamos el primer botón por defecto
+        // Activamos el primer botï¿½n por defecto
         button1.interactable = true;
 
-        // Los otros botones están desactivados inicialmente
+        // Los otros botones estï¿½n desactivados inicialmente
         button2.interactable = false;
         button3.interactable = false;
         button4.interactable = false;
     }
 
     // Update is called once per frame
-    void Update()
+    public void CheckKeys()
     {
         button2.interactable = keyHolder.ContainsKey(Key.KeyType.Arm);
         button3.interactable = keyHolder.ContainsKey(Key.KeyType.Eye);
-        button4.interactable = keyHolder.ContainsKey(Key.KeyType.Parasite);
+        button4.interactable = keyHolder.ContainsKey(Key.KeyType.FaithElevator);
     }
 }

@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpeed: 3
-  rotationSpeed: 40
+  rotationSpeed: 60
   walkingSpeed: 5
   sprintSpeed: 7
   rb: {fileID: 7932861691669880416}
@@ -227,8 +227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   blockCooldown: 10
+  healAmount: 0.5
   controller: {fileID: 6925274758536751481}
   impulseSource: {fileID: 826037338689790414}
+  lifeScreen: {fileID: 0}
 --- !u!114 &8043897667200009280
 MonoBehaviour:
   m_ObjectHideFlags: 0

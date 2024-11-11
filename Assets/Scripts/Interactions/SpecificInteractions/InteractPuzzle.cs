@@ -12,6 +12,7 @@ public class InteractPuzzle : MonoBehaviour, IEInteractable {
 
     UnityEvent currentInteraction;
     [SerializeField] PlayerController playerController;
+    [SerializeField] UnityEvent onExit;
     
 
     bool isFocused = false;
@@ -30,6 +31,7 @@ public class InteractPuzzle : MonoBehaviour, IEInteractable {
     }
 
     public void ExitPuzzle(){
+        onExit.Invoke();
         playerController.StateMachine.ChangeState(playerController.PlayerIdleState);
         puzzle.enabled = false;
         puzzleCamera.Priority = 0;
