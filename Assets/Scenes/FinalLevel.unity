@@ -26928,13 +26928,17 @@ PrefabInstance:
       propertyPath: lifeScreen
       value: 
       objectReference: {fileID: 9614209}
+    - target: {fileID: 6175231969471031946, guid: 055699391913eb64782cfbdf805895b5, type: 3}
+      propertyPath: keysList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8043897667200009280, guid: 055699391913eb64782cfbdf805895b5, type: 3}
       propertyPath: viewRaduis
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8766382902859220872, guid: 055699391913eb64782cfbdf805895b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -116.804855
+      value: -39.58
       objectReference: {fileID: 0}
     - target: {fileID: 8766382902859220872, guid: 055699391913eb64782cfbdf805895b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26942,7 +26946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8766382902859220872, guid: 055699391913eb64782cfbdf805895b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -74.58629
+      value: -41.2
       objectReference: {fileID: 0}
     - target: {fileID: 8766382902859220872, guid: 055699391913eb64782cfbdf805895b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33637,6 +33641,7 @@ GameObject:
   - component: {fileID: 880333461}
   - component: {fileID: 880333460}
   - component: {fileID: 880333459}
+  - component: {fileID: 880333462}
   m_Layer: 5
   m_Name: 'EyePannel '
   m_TagString: Untagged
@@ -33724,6 +33729,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880333457}
   m_CullTransparentMesh: 1
+--- !u!114 &880333462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880333457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd92f1b563cf88b4db839774f25f0bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 44999108}
+  audioClips:
+  - {fileID: 8300000, guid: a3aa918e7c378ef4db55cd111d5e7645, type: 3}
+  - {fileID: 8300000, guid: 3472b769694a24645b66a72fc184864c, type: 3}
+  - {fileID: 8300000, guid: 364817539d1e7fd4e915cdbee0a77863, type: 3}
+  - {fileID: 8300000, guid: d6a06fce68f05154eb0834650fb80a12, type: 3}
+  - {fileID: 8300000, guid: 59ba168bc2faea2468e70a12560e754e, type: 3}
+  - {fileID: 8300000, guid: 31f0b74edaa9bb34095daf8fe687c91a, type: 3}
+  - {fileID: 8300000, guid: 2a989f3f2196a9a4f953b61ac8c917a4, type: 3}
+  - {fileID: 8300000, guid: 2882a25778ab8e44f820c3bbe13188ac, type: 3}
+  - {fileID: 8300000, guid: c14aaec2c6a40fa4eaa1593f98b73897, type: 3}
+  - {fileID: 8300000, guid: ffd3d4b7de5bd40409faa75132e2e498, type: 3}
+  - {fileID: 8300000, guid: 3588693a7bf44044ba895c76c49deee0, type: 3}
 --- !u!1001 &880498398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56161,6 +56191,7 @@ GameObject:
   - component: {fileID: 1550522958}
   - component: {fileID: 1550522957}
   - component: {fileID: 1550522956}
+  - component: {fileID: 1550522959}
   m_Layer: 5
   m_Name: ParasitePannel
   m_TagString: Untagged
@@ -56248,6 +56279,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550522954}
   m_CullTransparentMesh: 1
+--- !u!114 &1550522959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550522954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd92f1b563cf88b4db839774f25f0bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 44999108}
+  audioClips:
+  - {fileID: 8300000, guid: a3aa918e7c378ef4db55cd111d5e7645, type: 3}
+  - {fileID: 8300000, guid: 3472b769694a24645b66a72fc184864c, type: 3}
+  - {fileID: 8300000, guid: 364817539d1e7fd4e915cdbee0a77863, type: 3}
+  - {fileID: 8300000, guid: d6a06fce68f05154eb0834650fb80a12, type: 3}
+  - {fileID: 8300000, guid: 59ba168bc2faea2468e70a12560e754e, type: 3}
+  - {fileID: 8300000, guid: 31f0b74edaa9bb34095daf8fe687c91a, type: 3}
+  - {fileID: 8300000, guid: 2a989f3f2196a9a4f953b61ac8c917a4, type: 3}
+  - {fileID: 8300000, guid: 2882a25778ab8e44f820c3bbe13188ac, type: 3}
+  - {fileID: 8300000, guid: c14aaec2c6a40fa4eaa1593f98b73897, type: 3}
+  - {fileID: 8300000, guid: ffd3d4b7de5bd40409faa75132e2e498, type: 3}
+  - {fileID: 8300000, guid: 3588693a7bf44044ba895c76c49deee0, type: 3}
 --- !u!1001 &1551143997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64540,7 +64596,7 @@ Transform:
   m_GameObject: {fileID: 1792725585}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.72, y: 0.514, z: -7.02}
+  m_LocalPosition: {x: -6.58, y: 0.514, z: -7.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
