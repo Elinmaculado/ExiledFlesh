@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3104233939695134246}
   - component: {fileID: 6350615779686381255}
   - component: {fileID: 2129137022182391574}
-  - component: {fileID: 7027910354226777174}
+  - component: {fileID: 8245323306408354104}
   - component: {fileID: 7831032621850942571}
   m_Layer: 0
   m_Name: MSH_Seating3
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7027910354226777174
-MeshCollider:
+--- !u!65 &8245323306408354104
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,10 +103,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5535333070025733749, guid: d9317068e33a7df4a8bad1158fe5b039, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.86914706, y: 2.627396, z: 1.0743731}
+  m_Center: {x: -0.009744704, y: -0.0000034570694, z: 0.5371867}
 --- !u!114 &7831032621850942571
 MonoBehaviour:
   m_ObjectHideFlags: 0
