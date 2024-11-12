@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float currentHealth;
     public float healAmount;
     private Rigidbody rb;
-    private bool canBlock = true;
+    private bool canBlock = false;
 
     [SerializeField] PlayerController controller;
 
@@ -36,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && canBlock)
         {
+            controller.SetAnimation("Block");
             Debug.Log("Jugador bloque� el da�o.");
             canBlock = false;
             Invoke("ActivateBlock", blockCooldown);
@@ -66,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void ActivateBlock()
+    public void ActivateBlock()
     {
         canBlock = true;
     }

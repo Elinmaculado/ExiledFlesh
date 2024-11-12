@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public PlayerDamagedState PlayerDamagedState {get; private set;}
     public PlayerPuzzleState PlayerPuzzleState {get; private set;}
 
+
     private void Start(){
         StateMachine = new PlayerStateMachine();
         PlayerIdleState = new PlayerIdleState(StateMachine, this);
@@ -73,5 +74,12 @@ public class PlayerController : MonoBehaviour
         playerCollider.enabled = visibility;
         rb.useGravity = visibility;
         SetMeshState(visibility);
+    }
+
+    public void SetModel(GameObject newModel){
+        playerModel.SetActive(false);
+        newModel.SetActive(true);
+        playerModel = newModel;
+        animator = playerModel.GetComponent<Animator>();
     }
 }
