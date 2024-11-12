@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9068855124555873123}
   - component: {fileID: 5157410350172263423}
   - component: {fileID: 5751988965026654407}
-  - component: {fileID: 116511213770961984}
   - component: {fileID: 8559569684228289513}
   m_Layer: 0
   m_Name: MSH_Scanner
@@ -85,28 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &116511213770961984
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6208599753203315111}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 693979609149027986, guid: bfef4f7b147fdeb40b440acebc4a05d1, type: 3}
 --- !u!114 &8559569684228289513
 MonoBehaviour:
   m_ObjectHideFlags: 0
