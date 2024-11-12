@@ -3592,7 +3592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &109141868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4065,6 +4065,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 682701967}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetModel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1333919406}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6193,7 +6205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &169526133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6217,7 +6229,7 @@ MonoBehaviour:
         m_MethodName: SetModel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1333919406}
+          m_ObjectArgument: {fileID: 21005358}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -36393,6 +36405,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 682701967}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetModel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1816737739}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1067299869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39137,7 +39161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1143828874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39161,7 +39185,7 @@ MonoBehaviour:
         m_MethodName: SetModel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1816737739}
+          m_ObjectArgument: {fileID: 21005358}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -48451,6 +48475,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 682701967}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetModel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21005358}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
