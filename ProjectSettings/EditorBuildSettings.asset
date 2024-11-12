@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testing/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: ea30b7b313eefa64b957a6c2e8124c75
   - enabled: 1
-    path: Assets/Scenes/Testing/CameraShakeTesting.unity
-    guid: db76b9cf0c0dc1b42bbccc4a3bca396b
+    path: Assets/Scenes/FinalLevel.unity
+    guid: a157e9cc0e620c748ba0b1711d591f03
   m_configObjects: {}
