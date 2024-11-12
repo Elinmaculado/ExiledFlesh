@@ -11,6 +11,9 @@ public class PlayerHiddenState : PlayerState
     {
         base.Enter();
         controller.tag = "HiddenPlayer";
+        controller.SetAnimation("Idle");
+        Debug.Log(controller.gameObject.name);
+        Debug.Log(controller.tag);
     }
 
     public override void Exit()
