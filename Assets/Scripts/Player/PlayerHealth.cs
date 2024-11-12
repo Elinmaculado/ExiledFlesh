@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public float healAmount;
     private Rigidbody rb;
     private bool canBlock = false;
+    public GameObject deadPannel;
 
     [SerializeField] PlayerController controller;
 
@@ -74,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        deadPannel.SetActive(true);
         Destroy(gameObject);
         Debug.Log("Player has died.");
     }

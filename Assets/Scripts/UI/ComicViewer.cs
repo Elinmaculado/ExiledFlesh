@@ -5,33 +5,32 @@ using UnityEngine;
 public class ComicViewer : MonoBehaviour
 {
     public GameObject[] images;
+    private PlayRandomSound sound;
     public float delay;
-    public PlayerController playerController;
+    public GameObject player;
 
     private void Start()
     {
-        
+        sound = GetComponent<PlayRandomSound>();
     }
     public void Activation()
     {
-        //playerController.enabled = false;
-        playerController.PlayerHiddenState.exitPoint = playerController.transform.position;
-        playerController.StateMachine.ChangeState(playerController.PlayerHiddenState);
         StartCoroutine(ActivationSequence());
-        playerController.StateMachine.ChangeState(playerController.PlayerIdleState);
     }
 
     private IEnumerator ActivationSequence()
     {
+        player.SetActive(false);
         for (int i = 0; i < images.Length; i++)
         {
             images[i].gameObject.SetActive(true);
+            sound.PlaySoundOneShot();
 
             yield return new WaitForSeconds(delay);
 
             images[i].gameObject.SetActive(false);
         }
-        playerController.enabled = true;
+        player.SetActive(true);
 
     }
 }
