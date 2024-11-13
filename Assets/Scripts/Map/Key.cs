@@ -28,14 +28,31 @@ public class Key : MonoBehaviour
         return key;
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.TryGetComponent(out KeyHolder keyHolder)){
+    private void OnTriggerEnter(Collider other)
+    {
+        AddKey(other);
+    }
+
+    public void AddKey(Collider other)
+    {
+        if (other.TryGetComponent(out KeyHolder keyHolder))
+        {
             keyHolder.AddKey(key);
             onCollect.Invoke();
-            TextAlert.instance.Alert(collectMessage,2);
+            TextAlert.instance.Alert(collectMessage, 2);
             Destroy(gameObject);
         }
     }
 
-    
+    public void AddKey(GameObject other)
+    {
+        if (other.TryGetComponent(out KeyHolder keyHolder))
+        {
+            keyHolder.AddKey(key);
+            onCollect.Invoke();
+            TextAlert.instance.Alert(collectMessage, 2);
+            Destroy(gameObject);
+        }
+    }
+
 }
