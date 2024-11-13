@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] List<GameObject> fovMeshes;
 
-    [SerializeField] Animator animator;
+    public Animator animator;
     private string currentAnimation;
 
     [SerializeField] GameObject playerModel;

@@ -9,7 +9,7 @@ public class PlayerDamagedState : PlayerState
     public override void Enter()
     {
         base.Enter();
-       controller.SetAnimation("TakeDamage");
+        controller.SetAnimation("TakeDamage");
     }
 
     public override void Exit()
