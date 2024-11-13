@@ -20,11 +20,13 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
     public AudioSource closeAudio;
     bool isOpen = false;
     [SerializeField] UnityEvent onOpen;
+    [SerializeField] UnityEvent onUnableToOpen;
+
+    [SerializeField] float onunableToOpenDelay = 0;
 
 
 
     public virtual void Interact(GameObject interactor){
-        Debug.Log("Interact");
         if(isOpen){return;}
         if(interactor.TryGetComponent(out KeyHolder keyHolder)){
             if(keyHolder.ContainsKey(neededKey.GetKeyType())){
@@ -35,6 +37,7 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
             }
             else{
                 TextAlert.instance.Alert(lockedMessage,1.5f);
+                StartCoroutine(UnableToOpenEventDelay());
             }
         }
     }
@@ -63,7 +66,12 @@ public class DualLockedDoor : MonoBehaviour, IEInteractable
         StartCoroutine(MoveDoor(door2,closePoint2,false));
     }
 
-    
+    IEnumerator UnableToOpenEventDelay()
+    {
+        yield return new WaitForSeconds(onunableToOpenDelay);
+        onUnableToOpen.Invoke();
+    }
+
     bool HasArrived(Vector3 pointA, Vector3 pointB){
         return pointA.x < pointB.x + 0.01 && pointA.x > pointB.x - 0.01
              && pointA.y < pointB.y + 0.01 && pointA.y > pointB.y - 0.01

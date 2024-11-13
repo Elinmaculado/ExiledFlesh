@@ -29,4 +29,18 @@ public class DialogueTrigger : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    public void TriggerDialogue(PlayerController player)
+    {
+        if (!dialogueSystem.CanSetDialogues(dialogues[index].dialogues))
+        {
+            return;
+        }
+        player.StateMachine.ChangeState(player.PlayerInvincibleState);
+        index++;
+        if (index == dialogues.Count)
+        {
+            index--;
+        }
+    }
 }
