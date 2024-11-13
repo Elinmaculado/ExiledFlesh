@@ -20,6 +20,10 @@ public class DialogueTrigger : MonoBehaviour
         if(!dialogueSystem.CanSetDialogues(dialogues[index].dialogues)){
             return;
         }
+        if(other.gameObject.TryGetComponent<PlayerController>(out PlayerController player))
+        {
+            player.StateMachine.ChangeState(player.PlayerInvincibleState);
+        }
         index++;
         if(index==dialogues.Count){
             gameObject.SetActive(false);
