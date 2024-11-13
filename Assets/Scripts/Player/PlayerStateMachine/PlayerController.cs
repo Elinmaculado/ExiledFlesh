@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] List<GameObject> fovMeshes;
 
-    [SerializeField] Animator animator;
+    public Animator animator;
     private string currentAnimation;
 
     [SerializeField] GameObject playerModel;
@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public PlayerHiddingState PlayerHiddingState {get; private set;}
     public PlayerDamagedState PlayerDamagedState {get; private set;}
     public PlayerPuzzleState PlayerPuzzleState {get; private set;}
+    public PlayerInvincibleState PlayerInvincibleState {get; private set;}
 
 
     private void Start(){
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         PlayerHiddingState = new PlayerHiddingState(StateMachine,this);
         PlayerDamagedState = new PlayerDamagedState(StateMachine, this) ;
         PlayerPuzzleState = new PlayerPuzzleState(StateMachine,this);
+        PlayerInvincibleState = new PlayerInvincibleState(StateMachine,this);
 
         StateMachine.Initializa(PlayerIdleState);
 

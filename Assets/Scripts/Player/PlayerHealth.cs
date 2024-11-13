@@ -37,16 +37,16 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && canBlock)
         {
-            controller.SetAnimation("Block");
             Debug.Log("Jugador bloque� el da�o.");
+            controller.animator.Play("Block");
             canBlock = false;
             Invoke("ActivateBlock", blockCooldown);
         }
         else
         {
+            Debug.Log("Player health: " + currentHealth);
             controller.EnterDamage(stunDuration);
             currentHealth -= damage;
-            Debug.Log("Player health: " + currentHealth);
             lifeScreen.SetAlpha(currentHealth/maxHealth);
 
             // Genera el impulso para sacudir la c�mara

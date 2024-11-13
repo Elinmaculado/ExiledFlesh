@@ -27,7 +27,7 @@ public class PlayerHiddingState : PlayerState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
-        controller.gameObject.transform.position = Vector3.Lerp(controller.gameObject.transform.position, hiddePoint,10 * Time.deltaTime);
+        controller.gameObject.transform.position = Vector3.Lerp(controller.gameObject.transform.position, hiddePoint,7.5f * Time.deltaTime);
         if(HasArrived()){
             stateMachine.ChangeState(controller.PlayerHiddenState);
         }

@@ -6,6 +6,7 @@ public class PlayerHiddenState : PlayerState
     }
 
     public Vector3 exitPoint;
+    public HideSpot hideSpot;
 
     public override void Enter()
     {
@@ -19,6 +20,7 @@ public class PlayerHiddenState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        hideSpot.StartCoroutine(hideSpot.MoveDoor());
         controller.transform.localScale = Vector3.one;
         controller.transform.position = exitPoint;
         controller.tag = "Player";

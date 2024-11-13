@@ -16,6 +16,7 @@ public class Dialogue : MonoBehaviour
 
     private int index;
     [SerializeField] PlayRandomSound sound;
+    [SerializeField] PlayerController playerController;
     
 
     private void Start() {
@@ -65,6 +66,7 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(Typeline());
         }
         else{
+            playerController.StateMachine.ChangeState(playerController.PlayerIdleState);
             textDisplay.text = string.Empty;
             index = 0;
             dialogueBox.SetActive(false);
