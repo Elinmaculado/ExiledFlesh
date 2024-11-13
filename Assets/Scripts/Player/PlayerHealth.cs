@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage, float stunDuration = 1.0f)
     {
-        if (Input.GetKey(KeyCode.E) && canBlock)
+        if (Input.GetKey(KeyCode.Space) && canBlock)
         {
             Debug.Log("Jugador bloque� el da�o.");
             controller.animator.Play("Block");
