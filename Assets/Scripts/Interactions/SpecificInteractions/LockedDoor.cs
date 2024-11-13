@@ -17,6 +17,8 @@ public class LockedDoor : MonoBehaviour, IEInteractable
     public AudioSource openAudio;
     public AudioSource closeAudio;
     [SerializeField] UnityEvent onOpen;
+    [SerializeField] UnityEvent onUnableToOpen;
+    [SerializeField] float onunableToOpenDelay = 0;
 
 
 
@@ -31,6 +33,7 @@ public class LockedDoor : MonoBehaviour, IEInteractable
             }
             else{
                 TextAlert.instance.Alert(lockedMessage,1.5f);
+                StartCoroutine(UnableToOpenEventDelay());
             }
         }
     }
@@ -52,7 +55,12 @@ public class LockedDoor : MonoBehaviour, IEInteractable
         StartCoroutine(MoveDoor(closePoint,false));
     }
 
-    
+    IEnumerator UnableToOpenEventDelay()
+    {
+        yield return new WaitForSeconds(onunableToOpenDelay);
+        onUnableToOpen.Invoke();
+    }
+
     bool HasArrived(Vector3 pointA, Vector3 pointB){
         return pointA.x < pointB.x + 0.01 && pointA.x > pointB.x - 0.01
              && pointA.y < pointB.y + 0.01 && pointA.y > pointB.y - 0.01
