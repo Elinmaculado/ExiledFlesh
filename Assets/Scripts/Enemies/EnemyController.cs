@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     private Transform playerPosition;
     public NavMeshAgent navMeshAgent;
 
+    public PlayRandomSound sound;
 
     #region StateMachine
     private EnemyStateMachine stateMachine;
@@ -32,6 +33,7 @@ public class EnemyController : MonoBehaviour
         Animator = enemyAnimator;
         player = GameObject.FindGameObjectWithTag("Player");
         playerPosition = player.transform;
+        sound = GetComponent<PlayRandomSound>();
         // Inicializa el navmesh
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = moveSpeed;
@@ -40,7 +42,7 @@ public class EnemyController : MonoBehaviour
         // Aqui agregu� el nav mesh
         chasingState = new ChasingState(stateMachine,this, navMeshAgent);
         waitState = new EnemyWaitState(stateMachine,this);
-        idleState = new IdleState(stateMachine,this);
+        idleState = new IdleState(stateMachine,this, sound);
 
         stateMachine.Initializa(idleState);
     }
@@ -56,6 +58,7 @@ public class EnemyController : MonoBehaviour
         {
             if (collision.gameObject.TryGetComponent( out PlayerHealth playerHealth)){
                 Animator.SetTrigger("Attack");
+                sound.PlayOneSound(1);
                 playerHealth.TakeDamage(damage);
                 // Empujar al jugador
                 Vector3 pushDirection = (collision.transform.position - transform.position).normalized;

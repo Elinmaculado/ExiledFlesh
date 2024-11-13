@@ -13,4 +13,9 @@ public class PlayRandomSound : MonoBehaviour
         audioSource.pitch = randomPitch;
         audioSource.PlayOneShot(audioClips[randomIndex]);
     }
+
+    public void PlayOneSound(int index)
+    {
+        audioSource.PlayOneShot(audioClips[index]);
+    }
 }

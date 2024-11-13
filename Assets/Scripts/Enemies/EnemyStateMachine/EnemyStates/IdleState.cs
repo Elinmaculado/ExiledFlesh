@@ -8,8 +8,10 @@ public class IdleState : EnemyState
     // Tiempo de espera antes de cambiar de punto
     private float waitTime = 3;
     private float wonderDistance = 5;
+    private PlayRandomSound sound;
 
-    public IdleState(EnemyStateMachine stateMachine, EnemyController controller) : base(stateMachine, controller) { }
+    public IdleState(EnemyStateMachine stateMachine, EnemyController controller, PlayRandomSound sound) : base(stateMachine, controller) 
+    { this.sound = sound; }
 
     public override void Enter()
     {
@@ -51,6 +53,7 @@ public class IdleState : EnemyState
     private void StartWandering()
     {
         isWandering = true;
+        
         controller.StartCoroutine(Wander());
     }
 
@@ -58,7 +61,6 @@ public class IdleState : EnemyState
     {
         isWandering = false;
         controller.StopCoroutine(Wander());
-
         // Dejar al enemigo en su posici�n actual
         controller.navMeshAgent.SetDestination(controller.transform.position);
     }
@@ -74,6 +76,7 @@ public class IdleState : EnemyState
                 //Idle
                 wanderTarget = GetRandomPointInNavMesh();
                 controller.Animator.SetBool("isWalking",false);
+                sound.PlayOneSound(0);
                 yield return new WaitForSeconds(waitTime); // Esperar antes de buscar un nuevo punto
                 controller.Animator.SetBool("isWalking",true);
                 controller.navMeshAgent.SetDestination(wanderTarget);
