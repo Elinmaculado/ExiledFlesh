@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ExiledFlesh.sln"
+    "dotnet.defaultSolution": "ExiledFlesh.sln",
+    "dotnet.preferCSharpExtension": true
 }
