@@ -15,7 +15,7 @@ public class TPCanvasController : MonoBehaviour
 
         // Los otros botones est�n desactivados inicialmente
         button2.interactable = false;
-        button3.interactable = false;
+        //button3.interactable = false;
         button4.interactable = false;
     }
 
@@ -23,7 +23,7 @@ public class TPCanvasController : MonoBehaviour
     public void CheckKeys()
     {
         button2.interactable = keyHolder.ContainsKey(Key.KeyType.Arm);
-        button3.interactable = keyHolder.ContainsKey(Key.KeyType.Eye);
+        //button3.interactable = keyHolder.ContainsKey(Key.KeyType.Eye);
         button4.interactable = keyHolder.ContainsKey(Key.KeyType.FaithElevator);
     }
 }
