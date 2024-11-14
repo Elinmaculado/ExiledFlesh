@@ -11765,6 +11765,55 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &243745435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243745436}
+  - component: {fileID: 243745437}
+  m_Layer: 6
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &243745436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243745435}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1587506917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243745437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243745435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494dbc20de34bf14ca2bd1d45f79e5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSystem: {fileID: 1313173365}
+  dialogues:
+  - dialogues:
+    - Now the other elevator on the lab's floor is open
+    - You should continue exploring there
 --- !u!1001 &246140991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13408,83 +13457,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1001 &305912760
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -227.8151
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0002193451
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -58.849255
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3682827460088064591, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5715677747120487269, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: m_Name
-      value: DialogueTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083263086968524971, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: dialogueSystem
-      value: 
-      objectReference: {fileID: 1313173365}
-    - target: {fileID: 8083263086968524971, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: dialogues.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083263086968524971, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogues.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083263086968524971, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogues.Array.data[0]
-      value: This is a test
-      objectReference: {fileID: 0}
-    - target: {fileID: 8083263086968524971, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
-      propertyPath: dialogues.Array.data[0].dialogues.Array.data[1]
-      value: loremipsum daosdmieunfoienfqiuernviewuriofnqvqeoqiuhfeoiuthbiourqhtnieruvhtiouryht
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 00b42c645e212f84fb556218bb0a0bf8, type: 3}
 --- !u!1001 &305924872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21064,9 +21036,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3583992627952019519, guid: b7293a52097c50645a5198f6bfb4909c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1787262452}
-    - targetCorrespondingSourceObject: {fileID: 3583992627952019519, guid: b7293a52097c50645a5198f6bfb4909c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1787262451}
     - targetCorrespondingSourceObject: {fileID: 3583992627952019519, guid: b7293a52097c50645a5198f6bfb4909c, type: 3}
       insertIndex: -1
@@ -22815,7 +22784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &519714914
 Transform:
   m_ObjectHideFlags: 0
@@ -24424,7 +24393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6728943817088137817, guid: 523675d10ef368f48bb7bd88b55f4de6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6731494025266112808, guid: 523675d10ef368f48bb7bd88b55f4de6, type: 3}
       propertyPath: m_Layer
@@ -24665,6 +24634,11 @@ PrefabInstance:
 --- !u!4 &555321694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 489738536373278256, guid: 523675d10ef368f48bb7bd88b55f4de6, type: 3}
+  m_PrefabInstance: {fileID: 555321693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &555321695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6728943817088137817, guid: 523675d10ef368f48bb7bd88b55f4de6, type: 3}
   m_PrefabInstance: {fileID: 555321693}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &555321696 stripped
@@ -63831,6 +63805,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2676405142632152363, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
       insertIndex: 36
       addedObject: {fileID: 394880924}
+    - targetCorrespondingSourceObject: {fileID: 1407569444890436110, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 243745436}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5370558546471118015, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
       insertIndex: -1
@@ -63838,9 +63815,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5370558546471118015, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1926451044}
-    - targetCorrespondingSourceObject: {fileID: 5370558546471118015, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1926451043}
     - targetCorrespondingSourceObject: {fileID: 7736187985313028069, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 904963153}
@@ -63848,6 +63822,11 @@ PrefabInstance:
 --- !u!4 &1587506916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2676405142632152363, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
+  m_PrefabInstance: {fileID: 1587506915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1587506917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1407569444890436110, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
   m_PrefabInstance: {fileID: 1587506915}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1596092237 stripped
@@ -69658,7 +69637,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 555321695}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -69704,27 +69683,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!65 &1787262452
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787262445}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.8770149, y: 3.2189205, z: 3.8890586}
-  m_Center: {x: -0.000004492327, y: -0.7513522, z: 1.8779867}
+      - m_Target: {fileID: 555321695}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1787262458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74258,23 +74228,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5370558546471118015, guid: ceb897bca3f1e77468fb77a0c96d3d5a, type: 3}
   m_PrefabInstance: {fileID: 1587506915}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1926451043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926451037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 494dbc20de34bf14ca2bd1d45f79e5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueSystem: {fileID: 1313173365}
-  dialogues:
-  - dialogues:
-    - Now the other elevator on the lab's floor is open
-    - You should continue exploring there
 --- !u!114 &1926451044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74293,13 +74246,13 @@ MonoBehaviour:
   onCollect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1926451043}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 243745437}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 682701967}
+          m_ObjectArgumentAssemblyTypeName: PlayerController, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -85595,7 +85548,6 @@ SceneRoots:
   - {fileID: 169526137}
   - {fileID: 1143828878}
   - {fileID: 109141872}
-  - {fileID: 305912760}
   - {fileID: 163512659}
   - {fileID: 904935023}
   - {fileID: 2071436295}
