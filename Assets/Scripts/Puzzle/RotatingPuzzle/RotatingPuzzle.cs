@@ -39,16 +39,6 @@ public class RotatingPuzzle : MonoBehaviour
         rotationObject.transform.Rotate(angleOfsset*Vector3.forward);
         CheckCorrect();
     }
-    
-    public void Front(){
-        rotationObject.transform.Rotate(angleOfsset*Vector3.up);
-        CheckCorrect();
-    }
-    
-    public void Back(){
-        rotationObject.transform.Rotate(angleOfsset*Vector3.down);
-        CheckCorrect();
-    }
 
     void CheckCorrect(){
         if(originalPos == rotationObject.transform.rotation && isShuffled){
@@ -72,12 +62,6 @@ public class RotatingPuzzle : MonoBehaviour
                     break;
                 case 3:
                     Right();
-                    break;
-                case 4:
-                    Front();
-                    break;
-                case 5:
-                    Back();
                     break;
                 default:
                     Up();
