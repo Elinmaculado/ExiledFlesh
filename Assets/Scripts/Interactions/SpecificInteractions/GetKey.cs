@@ -8,6 +8,6 @@ public class GetKey : MonoBehaviour, IEInteractable
 
     public void Interact(GameObject interactor)
     {
-        key.AddKey(interactor);
+        key.AddSpecialKey(interactor);
     }
 }

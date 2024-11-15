@@ -55,4 +55,13 @@ public class Key : MonoBehaviour
         }
     }
 
+    public void AddSpecialKey(GameObject other){
+           if (other.TryGetComponent(out KeyHolder keyHolder))
+        {
+            keyHolder.AddKey(key);
+            onCollect.Invoke();
+            TextAlert.instance.Alert(collectMessage, 2);
+        }
+    }
+
 }
